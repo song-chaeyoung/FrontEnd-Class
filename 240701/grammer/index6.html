@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #222;
+        color: #fff;
+      }
+
+      .items {
+        display: flex;
+        gap: 30px;
+        .item {
+          text-align: center;
+          width: 300px;
+          height: 200px;
+          position: relative;
+          .front,
+          .back {
+            position: absolute;
+            top: 0;
+            transition: all 0.5s;
+          }
+          .front {
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background-color: #333;
+            border-radius: 10px 10px 0 0;
+          }
+          .back {
+            height: 100%;
+            color: #000;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            a {
+              display: inline-block;
+              background-color: yellowgreen;
+              color: #fff;
+              margin-top: 6px;
+              padding: 5px 15px;
+              border-radius: 20px;
+              transition: background-color 0.5s;
+              &:hover {
+                background-color: #000;
+              }
+            }
+          }
+          &:hover .front {
+            top: -50%;
+          }
+          &:hover .back {
+            top: 50%;
+            border-radius: 0 0 10px 10px;
+          }
+          &:hover img {
+            animation: ani 1.5s linear infinite;
+          }
+        }
+      }
+
+      @keyframes ani {
+        0% {
+          transform: scale(0.9);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(0.9);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="items">
+      <div class="item">
+        <div class="front">
+          <img src="./images 2/space-01.png" alt="space-01" />
+          <h2>Mars</h2>
+        </div>
+        <div class="back">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Accusantium necessitatibus nihil itaque, laudantium odio aut.
+            Accusamus animi beatae maiores omnis ducimus nesciunt reiciendis
+            totam dicta earum, nostrum, deleniti quae nisi!
+          </p>
+          <a href="none">Read More</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="front">
+          <img src="./images 2/space-02.png" alt="space-02" />
+          <h2>Jupiter</h2>
+        </div>
+        <div class="back">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Accusantium necessitatibus nihil itaque, laudantium odio aut.
+            Accusamus animi beatae maiores omnis ducimus nesciunt reiciendis
+            totam dicta earum, nostrum, deleniti quae nisi!
+          </p>
+          <a href="none">Read More</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="front">
+          <img src="./images 2/space-03.png" alt="space-03" />
+          <h2>Saturns</h2>
+        </div>
+        <div class="back">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Accusantium necessitatibus nihil itaque, laudantium odio aut.
+            Accusamus animi beatae maiores omnis ducimus nesciunt reiciendis
+            totam dicta earum, nostrum, deleniti quae nisi!
+          </p>
+          <a href="none">Read More</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

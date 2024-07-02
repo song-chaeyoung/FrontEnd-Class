@@ -1,0 +1,189 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* skin food */
+.topbar_wrapper {
+  background-color: #f9f9f9;
+}
+
+.topbar {
+  width: 1140px;
+  height: 38px;
+  margin: 0 auto;
+  text-align: right;
+  position: relative;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 38px;
+    li {
+      color: #888;
+      font-size: 12px;
+      line-height: 38px;
+    }
+    select {
+      height: 22px;
+      padding: 0 21px 0 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      color: #666;
+    }
+  }
+}
+
+.gnb {
+  width: 1140px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  .gnb_logo {
+    width: 145px;
+    height: 40px;
+    background: url("./img/logo.png") center/cover no-repeat;
+    cursor: pointer;
+  }
+  .gnb_list {
+    margin-left: 180px;
+  }
+  .gnb_list > ul {
+    display: flex;
+    gap: 64px;
+    li {
+      color: #333;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 70px;
+      position: relative;
+    }
+    .lnb {
+      width: 160px;
+      height: 170px;
+      /* padding: 10px; */
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 100%);
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.7s;
+      li {
+        height: 50px;
+        font-size: 14px;
+        font-weight: 400;
+        transition: all 0.5s;
+        border-bottom: 2px solid transparent;
+      }
+    }
+  }
+}
+
+.gnb_list > ul > li .active {
+  border-bottom: 2px solid #333;
+  padding-bottom: 4px;
+  transition: all 0.5s;
+}
+
+.gnb_icon_wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px;
+  .gnb_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+    i {
+      font-size: 20px;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+}
+
+.top_contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background_img {
+  width: 100%;
+  height: 650px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background_text {
+  width: 1180px;
+  height: 150px;
+  background: #f9f9f9;
+  margin: 124px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+}
+
+.background_text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.background_text p {
+  text-align: center;
+  padding: 20px 0 0px;
+  color: #777;
+  font-size: 18px;
+}
+
+/* card_items */
+.card_items {
+  width: 100%;
+}
+
+.card_items ul {
+  position: absolute;
+  width: 100%;
+  bottom: 130px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+  li {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  li a img {
+    width: 220px;
+    height: 220px;
+  }
+}

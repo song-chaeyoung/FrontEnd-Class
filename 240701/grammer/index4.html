@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오버하면 상세설명</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .items {
+        display: flex;
+        gap: 10px;
+        .itme {
+          width: 300px;
+          height: 300px;
+          border: 1px solid #ddd;
+          position: relative;
+          img {
+            width: 290px;
+          }
+          .caption {
+            color: #fff;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            padding-top: 40px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            p {
+              margin: 10px 0;
+            }
+            a {
+              display: inline-block;
+              background-color: teal;
+              padding: 7px;
+              margin-top: 10px;
+              border-radius: 6px;
+              transition: all 0.3s;
+              &:hover {
+                background: #fff;
+                color: teal;
+              }
+            }
+          }
+          &:hover .caption {
+            opacity: 1;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="items">
+      <div class="itme">
+        <img src="./images/product-01.png" alt="product-01" />
+        <div class="caption">
+          <h2>Rirakuma Doll 25cm</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+            saepe harum ab odit exercitationem aut consectetur ipsa esse
+            repellendus aperiam
+          </p>
+          <p>price : <s>$12</s> -> $10</p>
+          <a href="#none">View Details</a>
+        </div>
+      </div>
+      <div class="itme">
+        <img src="./images/product-02.png" alt="product-02" />
+        <div class="caption">
+          <h2>Connie Doll 10cm</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+            saepe harum ab odit exercitationem aut consectetur ipsa esse
+            repellendus aperiam
+          </p>
+          <p>price : <s>$42</s> -> $40</p>
+          <a href="#none">View Details</a>
+        </div>
+      </div>
+      <div class="itme">
+        <img src="./images/product-03.png" alt="product-03" />
+        <div class="caption">
+          <h2>Cacao Doll Figure</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+            saepe harum ab odit exercitationem aut consectetur ipsa esse
+            repellendus aperiam
+          </p>
+          <p>price : <s>$32</s> -> $30</p>
+          <a href="#none">View Details</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
