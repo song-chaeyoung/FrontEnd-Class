@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        counter-increment: rint;
+      }
+      p::before {
+        content: counter(rint) ".";
+      }
+      P::after {
+        content: " - " attr(data-page) " page";
+      }
+      p::first-letter {
+        font-size: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem Ipsum</h1>
+    <p data-page="52">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis explicabo
+      qui suscipit illum, numquam laborum quaerat tenetur inventore labore
+      magnam ipsa debitis beatae rem eligendi laudantium quas aperiam
+      exercitationem sequi! Inventore veritatis molestiae quidem dolorum!
+      Soluta, ratione deleniti molestiae vitae ut id veritatis rem suscipit at
+      quas amet perspiciatis eligendi magnam magni facilis a, ipsa eos saepe
+      natus, architecto nihil.
+    </p>
+    <p data-page="273">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
+      aliquam corporis voluptate rem. Quisquam earum enim iusto doloremque optio
+      omnis vitae obcaecati, suscipit veniam blanditiis nisi minima voluptas nam
+      natus. Accusantium molestiae reprehenderit quam possimus nesciunt ratione
+      fuga pariatur repellendus minima, consectetur consequatur tempore cum
+      minus. Quaerat assumenda, maiores culpa, vel voluptatum placeat doloremque
+      quam nam maxime neque adipisci debitis. Quas, molestias animi. Eaque harum
+      ullam nam sint, explicabo aut culpa deserunt veritatis unde officiis
+      architecto minima est! Itaque nulla alias numquam consequatur dolore
+      nostrum odit repudiandae, est amet magnam! Blanditiis, voluptatibus cum?
+      Porro nobis quaerat ad, quasi optio consequuntur minus ab magni ut
+      inventore eum ipsa voluptates sequi expedita, quae doloribus molestias
+      veniam unde nihil incidunt. Soluta, hic nihil.
+    </p>
+  </body>
+</html>
