@@ -172,7 +172,7 @@ a {
 .card_items ul {
   position: absolute;
   width: 100%;
-  bottom: 130px;
+  bottom: 60px;
   display: flex;
   justify-content: center;
   gap: 20px;
