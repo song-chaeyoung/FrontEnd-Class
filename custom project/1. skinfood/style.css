@@ -75,7 +75,6 @@ a {
     .lnb {
       width: 160px;
       height: 170px;
-      /* padding: 10px; */
       position: absolute;
       left: 50%;
       bottom: 0;
@@ -89,6 +88,7 @@ a {
       text-align: center;
       opacity: 0;
       transition: all 0.7s;
+      z-index: 1;
       li {
         height: 50px;
         font-size: 14px;
@@ -128,6 +128,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .background_img {
@@ -138,11 +139,35 @@ a {
   background-repeat: no-repeat;
 }
 
+.card_items {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  bottom: 31%;
+  left: 0;
+}
+
+.card_items ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+  li {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  li a img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
 .background_text {
   width: 1180px;
   height: 150px;
   background: #f9f9f9;
-  margin: 124px 0;
+  margin: 200px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -162,28 +187,4 @@ a {
   padding: 20px 0 0px;
   color: #777;
   font-size: 18px;
-}
-
-/* card_items */
-.card_items {
-  width: 100%;
-}
-
-.card_items ul {
-  position: absolute;
-  width: 100%;
-  bottom: 60px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 0 auto;
-  li {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  li a img {
-    width: 220px;
-    height: 220px;
-  }
 }
