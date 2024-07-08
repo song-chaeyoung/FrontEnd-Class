@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I am young</title>
+    <!-- Fontawsome -->
+    <script
+      src="https://kit.fontawesome.com/580465cdf5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom link -->
+    <link rel="stylesheet" href="./수정.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header>
+        <div class="navgation">
+            <div class="logo">chae <br />young</div>
+            <!-- nav 태그는 로고와 햄버거를 제외하고 
+             각 페이지나 섹션을 이동하는 역할을 하는 친구한테만 써준다 -->
+            <nav class="gnb_center">
+                <ul>
+                  <!-- 클릭했을 경우 해당 section으로 가기 위해 a태그를 달아준다. -->
+                    <li class="active"><a href="">About Me</a></li>
+                    <li><a href="#">Capability</a></li>
+                    <li><a href="#">Keyword</a></li>
+                    <li><a href="#">My Goal</a></li>
+                    <li><a href="#">Cord Review</a></li>
+                </ul>
+            </nav>
+            <!-- 햄버거를 클릭해서 메뉴창이 나와야하므로 button태그로 만들어준다. -->
+            <button class="gnb_right">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+      <section class="background_img">
+        <artice class="top_text">
+          <!-- 화면 상단 메인 타이틀은 h1을 써주는 것이 좋다 -->
+          <h1>About Me</h1>
+          <!-- 화면 상단 서브 타이틀은 h2를 써주는 것이 좋다 -->
+          <h2>
+            안녕하세요. <br />
+            FE개발자 송채영입니다.
+          </h2>
+          <p>contact me.</p>
+          <div class="top_text_icon">
+            <!-- 굳이 span으로 감싸지 않아도 충분히 a 태그만으로도 만들 수 있다. -->
+              <a href="javascript:void(0)" class="kakao" target="_blank"></a>
+              <a href="javascript:void(0)" class="insta" target="_blank"></a>
+              <a href="https://velog.io/@scy512" class="velog" target="_blank"></a>
+          </div>
+        </artice>
+      </section>
+    </header>
+    <section class="aboutMe">
+      <h3>About Me</h3>
+      <article class="aboutMe_contents">
+        <div class="aboutMe_contents_img">
+          <div class="aboutMe_contents_img_arrow">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="aboutMe_contents_text">
+          <div class="name">
+            <!-- 보통 텍스트를 쓸 때는 span태그 대신 p태그를 쓰는 것이 좋다. -->
+            <p>이름</p>
+            <p>송채영</p>
+          </div>
+          <div class="birthday">
+            <p>생년월일</p>
+            <p>98.05.12</p>
+          </div>
+          <div class="place">
+            <p>거주지</p>
+            <p>서울시 관악구</p>
+          </div>
+          <div class="school">
+            <p>학교/전공</p>
+            <p>창원대/건축학과</p>
+          </div>
+          <div class="career">
+            <p>경력</p>
+            <p>에스파스건축사사무소 <br />(2022.01~2024.04)</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,328 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ul,
+  ol,
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* font */
+  @font-face {
+    font-family: "Cafe24Meongi-W-v1.0";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Meongi-W-v1.0.woff2")
+      format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "LINESeedKR-Bd";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
+      format("woff2");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "LINESeedKR-Rg";
+    src: url("https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.eot");
+    src: url("https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.woff")
+      format("woff");
+    font-style: normal;
+  }
+  
+  :root {
+    --bg--color--peachPuzz: #ffbe98;
+  }
+  
+  /* desktop */
+  
+  header {
+    width: 100%;
+    height: 80px;
+    background: var(--bg--color--peachPuzz);
+    position: relative;
+  }
+  
+  .navgation {
+    position: relative;
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    color: #fff;
+    z-index: 1;
+  }
+  
+  .logo {
+    font-family: "Cafe24Meongi-W-v1.0";
+    -webkit-text-stroke-width: 0.5;
+    -webkit-text-stroke-color: #fff;
+    font-size: 36px;
+    line-height: 80%;
+    letter-spacing: 3.6px;
+  }
+  
+  .gnb_center ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .gnb_center ul li {
+    color: #fff;
+    font-family: "LINESeedKR-Rg";
+    font-size: 20px;
+    letter-spacing: 0.02rem;
+    padding: 10px 0;
+    position: relative;
+  }
+  
+  .gnb_center ul li.active {
+    font-family: "LINESeedKR-Bd";
+    border-bottom: 4px solid #fff;
+  }
+
+  /* 마우스를 올렸을 때 hover 액션 */  
+  .gnb_center ul li::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.12s;
+  }
+
+  .gnb_center ul li:hover{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.12s;
+  }
+
+  .gnb_center ul li:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.12s;
+  }
+  
+  
+  .gnb_right {
+    width: 30px;
+    height: 18px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .gnb_right span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+  }
+  
+  .gnb_right span:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  
+  .gnb_right span:nth-child(2) {
+    top: 50%;
+    left: 0;
+    /* transition: translateY(-50%); */
+    /* 위치를 잡을 때는 transform을 써줍니당 */
+    transform: translateY(-50%);
+  }
+  
+  .gnb_right span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .gnb_right.active span:nth-child(1) {
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+  }
+  
+  .gnb_right.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .gnb_right.active span:nth-child(3) {
+    top: 50%;
+    left: 0;
+    transform: rotate(-45deg);
+  }
+  
+  /* background img */
+  
+  .background_img {
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(255, 190, 152, 0.3) 0%,
+        rgba(255, 190, 152, 0.3) 100%
+      ),
+      url("./img/main.jpg") lightgray 0px -1635.233px / 100% 381.235% no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .top_text {
+    position: absolute;
+    top: 330px;
+    left: 360px;
+    color: #fff;
+  }
+  
+  .top_text h1 {
+    font-family: "LINESeedKR-Bd";
+    font-size: 100px;
+    letter-spacing: -8px;
+  }
+  
+  .top_text h2 {
+    font-family: "LINESeedKR-Rg";
+    font-size: 42px;
+    margin-top: -10px;
+    letter-spacing: 2px;
+  }
+  
+  .top_text p {
+    font-family: "LINESeedKR-Rg";
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .top_text_icon {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .top_text_icon a {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 18px;
+    position: relative;
+  }
+  
+  .top_text_icon a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .top_text_icon a:nth-child(1)::before {
+    width: 50px;
+    height: 16px;
+    background: url("./img/kakaoicon.png") center/cover no-repeat;
+  }
+  
+  .top_text_icon a:nth-child(2)::before {
+    width: 38px;
+    height: 38px;
+    background: url("./img/instaicon.png") center/cover no-repeat;
+  }
+  
+  .top_text_icon a:nth-child(3)::before {
+    width: 46px;
+    height: 46px;
+    background: url("./img/velogicon.png") center/cover no-repeat;
+  }
+  
+  .aboutMe {
+    position: absolute;
+    width: 100%;
+    height: 895px;
+    top: 992px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 76px;
+  }
+  
+  .aboutMe h3 {
+    color: var(--bg--color--peachPuzz);
+    text-align: center;
+    font-family: "LINESeedKR-Bd";
+    font-size: 70px;
+    letter-spacing: -1.4px;
+  }
+  
+  .aboutMe_contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    margin: 0 auto;
+    margin-bottom: 76px;
+  }
+  
+  .aboutMe_contents_img {
+    width: 450px;
+    height: 560px;
+    background: url("./img/aboutMe1.jpg") center/cover no-repeat;
+  }
+  
+  .aboutMe_contents_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .aboutMe_contents_text div {
+    width: 420px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28px;
+  }
+  
+  .aboutMe_contents_text p:nth-child(1) {
+    color: var(--bg--color--peachPuzz);
+    font-family: "LINESeedKR-Bd";
+  }
+  
+  .aboutMe_contents_text p:nth-child(2) {
+    text-align: end;
+    font-family: "LINESeedKR-Rg";
+  }
+  
