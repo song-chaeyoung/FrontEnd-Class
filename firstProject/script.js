@@ -217,7 +217,7 @@ skillContainer.addEventListener("click", () => {
       if (index <= skillLevel.length) {
         skillItem.classList.add("active");
       }
-    }, 700 * index);
+    }, 1000 * index);
   });
 });
 
@@ -268,7 +268,6 @@ const codereviewBtnFirst = document.querySelector(".reveiw_btn_first");
 const modalFirst = document.querySelector(".modal_first");
 const modalCloseFirst = document.querySelector(".modal_close_first");
 const goTopShow = document.querySelector(".top_move_btn");
-console.log(goTopShow);
 
 codereviewBtnFirst.addEventListener("click", () => {
   modalFirst.classList.add("active");

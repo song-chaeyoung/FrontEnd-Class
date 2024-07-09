@@ -18,7 +18,7 @@
   <body>
     <div class="all_container">
       <header>
-        <div class="navgation">
+        <nav class="navgation">
           <div class="logo head-logo">chae <br />young</div>
           <div class="gnb_center">
             <ul>
@@ -55,7 +55,7 @@
             <span></span>
             <span></span>
           </button>
-        </div>
+        </nav>
         <div class="search_bar">
           <span class="close_btn">
             <i class="fas fa-xmark"></i>
@@ -87,7 +87,7 @@
         </div>
       </header>
       <main class="container">
-        <article class="background_img">
+        <section class="background_img">
           <section class="top_text">
             <div>
               <h1></h1>
@@ -116,7 +116,7 @@
               </div>
             </div>
           </section>
-        </article>
+        </section>
         <section class="myself">
           <h2 class="myself_text">저에 대해 소개하겠습니다XD</h2>
         </section>
@@ -252,9 +252,10 @@
               <div class="history_content">
                 <h2>Work Life-2</h2>
                 <p>
-                  histoty 설명입니다. histoty 설명입니다.histoty
-                  설명입니다.histoty 설명입니다.histoty 설명입니다.histoty
-                  설명입니다.
+                  건축설계부터 건축공모전, 건축 계획단계까지 건축사사무소를
+                  다니며 경험하면서, 보다 일에 대한 보람과 성취감을 느끼기
+                  위해서, 하고 싶고 적성에 맞는 일을 찾아 이젠아카데미까지 오게
+                  되었습니다.
                 </p>
               </div>
             </li>
@@ -343,7 +344,6 @@
               </span>
               <h5>#프론트엔드 개발자</h5>
               <div class="info_subTitle fourth">
-                <span>#0000</span>
                 <span>#내꿈은 네카쿠라배</span>
               </div>
               <p>
@@ -375,8 +375,8 @@
                   <p>Line Homepage</p>
                 </div>
                 <div>
-                  <h6>Sub Refrence</h6>
-                  <p>설명내용입니다.</p>
+                  <h6></h6>
+                  <p></p>
                 </div>
               </div>
             </div>
@@ -388,18 +388,18 @@
                 </button>
               </div>
               <div class="reviewbox_right">
-                <h5>Reference</h5>
+                <h5>Mark Up (HTML/CSS)</h5>
                 <div>
-                  <h6>Main Refrence</h6>
-                  <p>설명내용입니다.</p>
+                  <h6>HTML</h6>
+                  <p>Semantic Tag</p>
                 </div>
                 <div>
-                  <h6>Sub Refrence</h6>
-                  <p>설명내용입니다.</p>
+                  <h6>CSS-1</h6>
+                  <p>Common / Reset CSS</p>
                 </div>
                 <div>
-                  <h6>Main Color</h6>
-                  <p>설명내용입니다.</p>
+                  <h6>CSS-2</h6>
+                  <p>Nesting</p>
                 </div>
               </div>
             </div>
@@ -411,149 +411,204 @@
                 </button>
               </div>
               <div class="reviewbox_right">
-                <h5>Reference</h5>
+                <h5>Javascript</h5>
                 <div>
-                  <h6>Main Refrence</h6>
-                  <p>설명내용입니다.</p>
+                  <h6>Scroll Event</h6>
+                  <p>
+                    Header Fixed / main img size change <br />
+                    / gotoTop
+                  </p>
                 </div>
                 <div>
-                  <h6>Sub Refrence</h6>
-                  <p>설명내용입니다.</p>
+                  <h6>Click Event</h6>
+                  <p>Keyword Box / Review Modal</p>
                 </div>
                 <div>
-                  <h6>Main Color</h6>
-                  <p>설명내용입니다.</p>
+                  <h6>Offset Event</h6>
+                  <p>Hedaer Click Evnet [data-target]</p>
                 </div>
               </div>
             </div>
           </article>
-          <section class="codereview_modal_container modal_first">
-            <article class="modal_contents">
-              <div class="modal_navgation_box">
-                <div class="modal_navgation">
-                  <span>
-                    <i class="fa-solid fa-book-open"></i>
+          <section class="modal">
+            <article class="codereview_modal_container modal_first">
+              <div class="modal_contents">
+                <div class="modal_navgation_box">
+                  <div class="modal_navgation">
+                    <span>
+                      <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    <p>READ ME</p>
+                  </div>
+                  <span id="modal_close" class="modal_close_first">
+                    <i class="fa-solid fa-xmark"></i>
                   </span>
-                  <p>READ ME</p>
                 </div>
-                <span id="modal_close" class="modal_close_first">
-                  <i class="fa-solid fa-xmark"></i>
-                </span>
+                <div class="modal_title">
+                  <h4>Main Color Design</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>2024 Pantone Color : Peach Puzz color</p>
+                </div>
+                <p class="modal_desc">
+                  2024년 팬톤 컬러는 피치 퍼즈입니다. 핑크와 오렌지 사이에
+                  은은하게 자리 잡은 벨벳 같은 순한 복숭아 컬러로 마음과 몸과
+                  영혼을 풍요롭게 하며, 침착한 분위기를 자애내고 편안함과
+                  따뜻함을 제공하는 색상입니다.
+                </p>
+                <div class="modal_code modal_code_first"></div>
+                <div class="modal_title">
+                  <h4>Line Hompage</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>
+                    전체적인 레이아웃 구성을 Line 홈페이지로 구성, 배운 내용을
+                    바탕으로 레이아웃에 반영하여 페이지 구성
+                  </p>
+                </div>
+                <p class="modal_desc">
+                  홈페이지 레이아웃 구성만큼은 fullPage.js를 사용하지 않고 있는
+                  큰 홈페이지를 찾다가 "Line"의 홈페이지를 발견하게 되어, 제가
+                  사용할 수 있는 스킬들을 최대한 활용하고, 수업시간에 배운
+                  내용을 임의대로 추가하여 현재의 홈페이지 레이아웃구성을 가지게
+                  되었습니다.
+                </p>
+                <div class="modal_code modal_code_second"></div>
               </div>
-              <div class="modal_title">
-                <h4>타이틀</h4>
-              </div>
-              <div class="modal_title modal_sub_title">
-                <p>서브타이틀</p>
-              </div>
-              <p class="modal_desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                magni accusantium a? Molestias error sapiente hic, labore, dicta
-                omnis quas soluta vitae autem at veniam blanditiis quibusdam
-                aspernatur recusandae placeat!
-              </p>
-              <div class="modal_code"></div>
-              <div class="modal_title">
-                <h4>타이틀</h4>
-              </div>
-              <div class="modal_title modal_sub_title">
-                <p>서브타이틀</p>
-              </div>
-              <p class="modal_desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                magni accusantium a? Molestias error sapiente hic, labore, dicta
-                omnis quas soluta vitae autem at veniam blanditiis quibusdam
-                aspernatur recusandae placeat!
-              </p>
-              <div class="modal_code"></div>
             </article>
-          </section>
-          <section class="codereview_modal_container modal_second">
-            <article class="modal_contents">
-              <div class="modal_navgation_box">
-                <div class="modal_navgation">
-                  <span>
-                    <i class="fa-solid fa-book-open"></i>
+            <article class="codereview_modal_container modal_second">
+              <div class="modal_contents">
+                <div class="modal_navgation_box">
+                  <div class="modal_navgation">
+                    <span>
+                      <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    <p>READ ME</p>
+                  </div>
+                  <span id="modal_close" class="modal_close_second">
+                    <i class="fa-solid fa-xmark"></i>
                   </span>
-                  <p>READ ME</p>
                 </div>
-                <span id="modal_close" class="modal_close_second">
-                  <i class="fa-solid fa-xmark"></i>
-                </span>
+                <div class="modal_title">
+                  <h4>HTML</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Semantic Tag</p>
+                </div>
+                <p class="modal_desc">
+                  명시적이고 직관적인 구조의 설계를 위한 Semantic Tag를 활용하여
+                  HTML 설계를 하였습니다. header, footer를 비롯하여, nav,
+                  section, article, main 등 사람뿐만 아니라, 검색엔진, 웹도 보다
+                  빨리 코드를 이해하여 SEO(검색엔진최적화) 성능을 향상시킬 수
+                  있습니다.
+                </p>
+                <div class="modal_code modal_code_three"></div>
+                <div class="modal_title">
+                  <h4>CSS-1</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Common / Reset CSS</p>
+                </div>
+                <p class="modal_desc">
+                  효율적인 코드 작성을 위한 공통으로 Common / Reset CSS 파일을
+                  만들어 작성하였습니다. 기존 코드 외에도 외부에서 가져온
+                  서체등도 함께 관리하여 효율적인 코드 작성을 하고자 하였습니다.
+                </p>
+                <div class="modal_code modal_code_four">
+                  <div class="modal_code_four_1"></div>
+                  <div class="modal_code_four_2"></div>
+                </div>
+                <div class="modal_title">
+                  <h4>CSS-2</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Nesting</p>
+                </div>
+                <p class="modal_desc">
+                  CSS Nesting (CSS 중첩)을 활용하여 간결한 코드 작성을
+                  하였습니다. 코드의 전체 길이가 짧아지고, 처음 작성할때는
+                  직관적으로 코드 작성이 가능하였으나, CSS Nesting에 아직
+                  익숙하지 않아 코드 수정 시 부모와 자식 요소가 헷갈리는 문제가
+                  발생하였고 반응형 제작시 자식요소를 수정하려면 네스팅된 요소를
+                  모두 작성해야하여 데스크탑 코드 작성에 비해 비효율적인 부분이
+                  느껴졌습니다.
+                </p>
+                <div class="modal_code"></div>
               </div>
-              <div class="modal_title">
-                <h4>타이틀2</h4>
-              </div>
-              <div class="modal_title modal_sub_title">
-                <p>서브타이틀2</p>
-              </div>
-              <p class="modal_desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                magni accusantium a? Molestias error sapiente hic, labore, dicta
-                omnis quas soluta vitae autem at veniam blanditiis quibusdam
-                aspernatur recusandae placeat!
-              </p>
-              <div class="modal_code"></div>
-              <div class="modal_title">
-                <h4>타이틀</h4>
-              </div>
-              <div class="modal_title modal_sub_title">
-                <p>서브타이틀</p>
-              </div>
-              <p class="modal_desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                magni accusantium a? Molestias error sapiente hic, labore, dicta
-                omnis quas soluta vitae autem at veniam blanditiis quibusdam
-                aspernatur recusandae placeat!
-              </p>
-              <div class="modal_code"></div>
             </article>
-          </section>
-          <section class="codereview_modal_container modal_third">
-            <article class="modal_contents">
-              <div class="modal_navgation_box">
-                <div class="modal_navgation">
-                  <span>
-                    <i class="fa-solid fa-book-open"></i>
+            <article class="codereview_modal_container modal_third">
+              <div class="modal_contents">
+                <div class="modal_navgation_box">
+                  <div class="modal_navgation">
+                    <span>
+                      <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    <p>READ ME</p>
+                  </div>
+                  <span id="modal_close" class="modal_close_third">
+                    <i class="fa-solid fa-xmark"></i>
                   </span>
-                  <p>READ ME</p>
                 </div>
-                <span id="modal_close" class="modal_close_third">
-                  <i class="fa-solid fa-xmark"></i>
-                </span>
+                <div class="modal_title">
+                  <h4>Scroll Event</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Header Fixed / main img size change / gotoTop</p>
+                </div>
+                <p class="modal_desc">
+                  window.addEventListener의 "scroll" 이벤트를 통하여
+                  window.scrollY 값을 구해 if/else 조건문으로
+                  classList.add/remove를 활용하여 "active" 값을 add/remove
+                  하였습니다.
+                </p>
+                <div class="modal_code modal_code_six">
+                  <div class="modal_code_six_1"></div>
+                  <div class="modal_code_six_2"></div>
+                </div>
+                <div class="modal_title">
+                  <h4>Click Event</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Keyword Box / Review Modal</p>
+                </div>
+                <p class="modal_desc">
+                  keword box의 이벤트가 발생할 수 있도록
+                  window.addEventListener의 "click" 이벤트를 추가하여 각각의
+                  이벤트가 클릭시 나타납니다. 또한 keword box의 경우 add/remove
+                  대신 "toggle"를 활용하여 간결한 코드가 될 수 있도록
+                  계획하였습니다.
+                </p>
+                <div class="modal_code modal_code_seven">
+                  <div class="modal_code_seven_1"></div>
+                  <div class="modal_code_seven_2"></div>
+                </div>
+                <div class="modal_title">
+                  <h4>Offset event</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Hedaer Click Evnet [data-target]</p>
+                </div>
+                <p class="modal_desc">
+                  header에 ul>li>a에 data-target 값을 추가한 후 각 section에도
+                  동일한 id값을 추가하여 해당 a[data-target]을 클릭하는 이벤트가
+                  발생할때 동일한 이름의 section으로 이동할 수 있게 하는
+                  이벤트를 추가했습니다. 각각의 section 높이에 맞게 - 80 ||
+                  -140의 높이조절을 주었고, behavior 발생시 smooth한 효과를 함께
+                  추가하였습니다.
+                </p>
+                <div class="modal_code modal_code_eight">
+                  <div class="modal_code_eight_1"></div>
+                  <div class="modal_code_eight_2"></div>
+                </div>
               </div>
-              <div class="modal_title">
-                <h4>타이틀3</h4>
-              </div>
-              <div class="modal_title modal_sub_title">
-                <p>서브타이틀3</p>
-              </div>
-              <p class="modal_desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                magni accusantium a? Molestias error sapiente hic, labore, dicta
-                omnis quas soluta vitae autem at veniam blanditiis quibusdam
-                aspernatur recusandae placeat!
-              </p>
-              <div class="modal_code"></div>
-              <div class="modal_title">
-                <h4>타이틀</h4>
-              </div>
-              <div class="modal_title modal_sub_title">
-                <p>서브타이틀</p>
-              </div>
-              <p class="modal_desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                magni accusantium a? Molestias error sapiente hic, labore, dicta
-                omnis quas soluta vitae autem at veniam blanditiis quibusdam
-                aspernatur recusandae placeat!
-              </p>
-              <div class="modal_code"></div>
             </article>
           </section>
         </section>
-        <button class="top_move_btn" href="#">
-          <i class="fa-solid fa-caret-up"></i>
-        </button>
+        <div class="top_container">
+          <button class="top_move_btn" href="#">
+            <i class="fa-solid fa-caret-up"></i>
+          </button>
+        </div>
         <footer>
           <div class="footer_wrapper">
             <div class="footer_left">
