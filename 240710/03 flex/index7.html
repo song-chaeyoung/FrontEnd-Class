@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+      }
+      header {
+        width: 100%;
+        height: 100px;
+        background: pink;
+      }
+      main {
+        display: flex;
+        justify-content: space-between;
+        height: calc(100vh - 200px);
+        nav {
+          flex: 1 3 250px;
+          background: #ddd;
+        }
+        article {
+          /* flex: 9 1 1200px; */
+          background: #aaa;
+        }
+        aside {
+          flex: 2 2 250px;
+          background: #7777;
+        }
+      }
+      footer {
+        background: #333;
+        width: 100%;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <main>
+      <nav>nav</nav>
+      <article>article</article>
+      <aside>aside</aside>
+    </main>
+    <footer>footer</footer>
+  </body>
+</html>

@@ -117,7 +117,7 @@ links.forEach((link) => {
         this.dataset.name == "history" ||
         this.dataset.name == "keyword"
       ) {
-        let offset = targetSection.offsetTop - 140;
+        let offset = targetSection.offsetTop - 100;
 
         window.scrollTo({
           top: offset,
@@ -152,15 +152,16 @@ const slideContainerArrow = document.querySelector(
 const slideArrows = document.querySelectorAll(".slide_arrow_btn");
 const slideImg = document.querySelector(".about-me_contents_img");
 
-const pics = ["aboutMe1.jpg", "aboutMe2.jpg", "aboutMe3.jpg"];
+const pics = ["aboutMe1.jpg", "aboutMe2.jpg", "aboutMe3.JPG"];
 let i = 0;
 let slideInterval;
 let isTransitioning = false;
 
-slideImg.style.background = `url('./img/${pics[0]}') center/cover no-repeat`;
+slideImg.style.background = `url('https://ecimg.cafe24img.com/pg1108b37246576001/scy512/iamyoung/${pics[0]}') center/cover no-repeat`;
 
 const updateSlide = (i) => {
-  slideImg.style.background = `url('./img/${pics[i]}') center/cover no-repeat`;
+  slideImg.style.background = `url('https://ecimg.cafe24img.com/pg1108b37246576001/scy512/iamyoung/${pics[i]}') center/cover no-repeat`;
+  slideImg.style.transition = "all 0.5s";
 };
 
 const startSlideShow = () => {
@@ -196,7 +197,7 @@ slideArrows.forEach((arrow) => {
 
     setTimeout(() => {
       isTransitioning = false;
-      startSlideShow();
+      // startSlideShow();
     }, 500);
   });
 });
@@ -208,7 +209,6 @@ slideContainerArrow.addEventListener("mouseout", resetSlideShow);
 
 // capability ani start
 const skillLevel = document.querySelectorAll(".skill_level");
-console.log(skillLevel);
 const skillContainer = document.querySelector(".skill_contanier");
 
 skillContainer.addEventListener("click", () => {

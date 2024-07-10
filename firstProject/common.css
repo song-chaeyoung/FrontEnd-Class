@@ -1,0 +1,117 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  outline: none;
+  background: inherit;
+  border: none;
+}
+
+/* common */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  -ms-overflow-style: none;
+  width: 100%;
+}
+
+section {
+  padding: 0 100px 100px;
+  margin-top: 100px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h3 {
+  text-align: center;
+  font-family: "LINESeedKR-Bd";
+  font-size: 70px;
+  letter-spacing: -1.4px;
+  margin: 0 auto;
+}
+
+/* font */
+@font-face {
+  font-family: "Cafe24Meongi-W-v1.0";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Meongi-W-v1.0.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LINESeedKR-Bd";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LINESeedKR-Rg";
+  src: url("https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.eot");
+  src: url("https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.woff")
+    format("woff");
+  font-style: normal;
+}
+
+:root {
+  --bg--color--peachPuzz: #ffbe98;
+}
+
+/* keyframe */
+/* toptext_ani */
+@keyframes textfadeinout {
+  0% {
+    diplay: none;
+  }
+  100% {
+    display: block;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes skillani {
+  0% {
+    width: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
