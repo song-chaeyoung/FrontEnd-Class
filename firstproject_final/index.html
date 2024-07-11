@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=1.0 width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"
+      height="device-height"
+    />
+    <meta
+      property="og:image"
+      content="https://ecimg.cafe24img.com/pg1108b37246576001/scy512/iamyoung/meicon.png"
+    />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:title" content="I am young" />
+    <meta
+      property="og:description"
+      content="FE개발자 송채영의 자기소개 페이지 입니다."
+    />
+    <title>I am young</title>
+    <link rel="shortcut icon" href="./img/meicon.png" type="image/x-icon" />
+    <!-- Fontawsome -->
+    <script
+      src="https://kit.fontawesome.com/580465cdf5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- custom link -->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div class="all_container">
+      <header>
+        <nav class="navgation">
+          <div class="logo head-logo">chae <br />young</div>
+          <div class="gnb_center">
+            <ul>
+              <li>
+                <a href="#" data-target="#about" data-name="about">About Me</a>
+              </li>
+              <li>
+                <a href="#" data-target="#capability" data-name="capability"
+                  >Capability</a
+                >
+              </li>
+              <li>
+                <a href="#" data-target="#history" data-name="history"
+                  >History</a
+                >
+              </li>
+              <li>
+                <a href="#" data-target="#keyword" data-name="keyword"
+                  >Keyword</a
+                >
+              </li>
+              <li>
+                <a href="#" data-target="#myGoal" data-name="myGoal">My Goal</a>
+              </li>
+              <li>
+                <a href="#" data-target="#codereview" data-name="codereview"
+                  >Cord Review</a
+                >
+              </li>
+            </ul>
+          </div>
+          <button class="gnb_right">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+        <div class="search_bar">
+          <span class="close_btn">
+            <i class="fas fa-xmark"></i>
+          </span>
+          <ul>
+            <li>
+              <a href="#" data-target="#about" data-name="about">About Me</a>
+            </li>
+            <li>
+              <a href="#" data-target="#capability" data-name="capability"
+                >Capability</a
+              >
+            </li>
+            <li>
+              <a href="#" data-target="#history" data-name="history">History</a>
+            </li>
+            <li>
+              <a href="#" data-target="#keyword" data-name="keyword">Keyword</a>
+            </li>
+            <li>
+              <a href="#" data-target="#myGoal" data-name="myGoal">My Goal</a>
+            </li>
+            <li>
+              <a href="#" data-target="#codereview" data-name="codereview"
+                >Cord Review</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main class="container">
+        <section class="background_img">
+          <section class="top_text">
+            <div>
+              <h1></h1>
+              <span class="blink blink_first">|</span>
+            </div>
+            <div>
+              <h2 class="subtitle"></h2>
+              <span class="blink blink_second">|</span>
+            </div>
+            <div class="contactme">
+              <p>contact me.</p>
+              <div class="top_text_icon">
+                <a
+                  href="https://www.instagram.com/1am_young/"
+                  class="insta"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a
+                  href="https://github.com/song-chaeyoung"
+                  class="github"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://velog.io/@scy512"
+                  class="velog"
+                  target="_blank"
+                ></a>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="about-me" id="about">
+          <h3>About Me</h3>
+          <article class="about-me_contents">
+            <div class="about-me_img_container">
+              <div class="about-me_contents_img"></div>
+              <div class="about-me_contents_img_arrow">
+                <span class="slide_arrow_btn"
+                  ><i class="fa-solid fa-chevron-left" id="leftArrow"></i
+                ></span>
+                <span class="slide_arrow_btn"
+                  ><i class="fa-solid fa-chevron-right" id="rightArrow"></i
+                ></span>
+              </div>
+            </div>
+            <div class="about-me_contents_text">
+              <div class="name">
+                <p>이름</p>
+                <p>송채영</p>
+              </div>
+              <div class="birthday">
+                <p>생년월일</p>
+                <p>98.05.12</p>
+              </div>
+              <div class="place">
+                <p>거주지</p>
+                <p>서울시 관악구</p>
+              </div>
+              <div class="school">
+                <p>학교/전공</p>
+                <p>창원대/건축학과</p>
+              </div>
+              <div class="career">
+                <p>경력</p>
+                <p>
+                  에스파스건축사사무소 <br />
+                  (2022.01~2024.04)
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="capability" id="capability">
+          <h3>Capability</h3>
+          <article class="skill_contanier">
+            <div class="skill">
+              <div class="skilltext">
+                <span>PSD/AI</span>
+                <span>80%</span>
+              </div>
+              <div class="skillbar_box">
+                <div class="skill_level"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skilltext">
+                <span>Figma</span>
+                <span>40%</span>
+              </div>
+              <div class="skillbar_box">
+                <div class="skill_level first"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skilltext">
+                <span>HTML/CSS</span>
+                <span>50%</span>
+              </div>
+              <div class="skillbar_box">
+                <div class="skill_level"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skilltext">
+                <span>Javascript</span>
+                <span>20%</span>
+              </div>
+              <div class="skillbar_box">
+                <div class="skill_level"></div>
+              </div>
+            </div>
+            <div class="dimmed">
+              <buttton>click me</buttton>
+            </div>
+            <p>InDesign / Auto Cad / Sketch UP / Rhino / Enscape etc...</p>
+          </article>
+        </section>
+        <section class="history" id="history">
+          <h3>History</h3>
+          <ul class="history_conatainer">
+            <li>
+              <div class="history_content">
+                <h2>Before Age 20</h2>
+                <p>
+                  저는 어린시절부터 창원, 그 중에서도 마산에서 자랐습니다. 초,
+                  중, 고등학교, 대학교까지 모두 마산, 창원에서 졸업했고 현재
+                  부모님도 마산에서 지내고 계십니다. 저도 가끔 부모님과 친구들을
+                  뵈러 마산에 방문합니다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="history_content">
+                <h2>University</h2>
+                <p>
+                  대학시절 다양한 경험을 위한 많은 활동을 진행하였습니다.
+                  과대부터 학생회, 학교홍보대사까지 보다 많은 경험을 진행하면서
+                  다양한 사람들을 만나왔습니다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="history_content">
+                <h2>Graduation Exhibition</h2>
+                <p>
+                  과제와 프로젝트로 이루어진 건축학과는 졸업할때도 졸업전시회를
+                  진행합니다. 5년간의 배움과 결실로 이루어지는 건축학과의
+                  졸업전시회를 위해 저도 열심히 노력하여 졸업전시회를 끝마치고
+                  졸업하였습니다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="history_content">
+                <h2>Work Life-1</h2>
+                <p>
+                  대학교를 졸업후 취업과 꿈을 위해 서울로 올라와서
+                  건축사사무소에 취직했습니다. 대학교에서 배운 지식을 바탕으로
+                  실무에 적응하며 약 2년 4개월간 건축사사무소에서 근무했습니다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="history_content">
+                <h2>Work Life-2</h2>
+                <p>
+                  건축설계부터 건축공모전, 건축 계획단계까지 건축사사무소를
+                  다니며 경험하면서, 보다 일에 대한 보람과 성취감을 느끼기
+                  위해서, 하고 싶고 적성에 맞는 일을 찾아 이젠아카데미까지 오게
+                  되었습니다.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="keyword" id="keyword">
+          <article class="keyword_title">
+            <h3>#Keyword</h3>
+            <p>
+              Introducing myself. <br />
+              If you have any question, flease feel free to ask!
+            </p>
+          </article>
+          <article class="keyword_box_container">
+            <span class="keyword_line"></span>
+            <div class="key-box box_first">
+              <span class="keyword_box_circle keyword_cicle_first"></span>
+              <div class="keyword_box_info">
+                <span>
+                  <i class="fa-solid fa-clipboard-user"></i>
+                </span>
+                <h5>#eNtP</h5>
+                <div class="info_subTitle first">
+                  <span>#대문자P</span>
+                  <span>#어떻게든한다</span>
+                </div>
+                <p>
+                  10번 하면 10번 다 entp가 나오는 확신의 entp. 그 중에서도 N과
+                  P가 90%가 넘는 대문자 N,P 입니다. 대표적인 P의 특성답게 일을
+                  조금 미루는 편이지만 어떻게든 해내는 능력도 있기때문에
+                  프로젝트 마감을 한번도 넘겨본적 없습니다.
+                </p>
+              </div>
+              <div class="keyword_box_img box_img_first"></div>
+            </div>
+            <div class="key-box box_second">
+              <span class="keyword_box_circle keyword_cicle_second"></span>
+              <div class="keyword_box_img box_img_second"></div>
+              <div class="keyword_box_info">
+                <span>
+                  <span class="fas fa-computer"></span>
+                </span>
+                <h5>#컴퓨터</h5>
+                <div class="info_subTitle second">
+                  <span>#게임</span>
+                  <span>#e스포츠</span>
+                </div>
+                <p>
+                  5살때 네이버 게임부터 시작해서 RPG부터 AOS, FPS까지 다양한
+                  게임을 즐기면서 자랐습니다. 최근에는 게임으로 진행되는
+                  E-스포츠 직관까지 다니면서 다양하게 게임을 즐기고 있습니다.
+                </p>
+              </div>
+            </div>
+            <div class="key-box box_third">
+              <span class="keyword_box_circle keyword_cicle_third"></span>
+              <div class="keyword_box_info">
+                <span>
+                  <i></i>
+                </span>
+                <h5>#끈기</h5>
+                <div class="info_subTitle third">
+                  <span>#밤샘프로젝트</span>
+                  <span>#24시간깨어있기</span>
+                </div>
+                <p>
+                  대학시절부터 전 직장까지 항상 프로젝트 단위로 과제와 학업을
+                  수행해왔습니다. 프로젝트 마감일 직전이면 항상 마지막 스퍼트를
+                  위한 밤샘에 최적화되어 있는 사람입니다!
+                </p>
+                <i></i>
+              </div>
+              <div class="keyword_box_img box_img_third"></div>
+            </div>
+          </article>
+        </section>
+        <section class="mygoal" id="myGoal">
+          <span class="mygoal_line"></span>
+          <h3>My Goal</h3>
+          <div class="key-box mygoal_first">
+            <span class="mygoal_cicle keyword_box_circle"></span>
+            <div class="keyword_box_img myGoal_img"></div>
+            <div class="keyword_box_info myGoal_info">
+              <span>
+                <i class="fa-solid fa-laptop-code"></i>
+              </span>
+              <h5>#프론트엔드 개발자</h5>
+              <div class="info_subTitle fourth">
+                <span>#내꿈은 네카쿠라배</span>
+              </div>
+              <p>
+                컴퓨터와 친하고 편하게 다룰수 있는 저는 일에 대한 보람과
+                성취감을 느끼기 위해서, 하고 싶고 적성에 맞는 일을 찾아
+                프론트엔드 개발자가 되고 싶습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="codereview" id="codereview">
+          <h3>Code Review</h3>
+          <article class="codereview_container">
+            <div class="codereview_box reviewBoxFisrt">
+              <div class="reviewbox_left">
+                <div class="reviewbox_left_img"></div>
+                <button id="reviewbox_left_btn" class="reveiw_btn_first">
+                  자세히 보기
+                </button>
+              </div>
+              <div class="reviewbox_right">
+                <h5>Reference</h5>
+                <div>
+                  <h6>Main Color</h6>
+                  <p>2024 Pantone Color : Peach Puzz color</p>
+                </div>
+                <div>
+                  <h6>Main Refrence</h6>
+                  <p>Line Homepage</p>
+                </div>
+                <div>
+                  <h6></h6>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div class="codereview_box reviewBoxSecond">
+              <div class="reviewbox_left">
+                <div class="reviewbox_left_img"></div>
+                <button id="reviewbox_left_btn" class="reveiw_btn_second">
+                  자세히 보기
+                </button>
+              </div>
+              <div class="reviewbox_right">
+                <h5>Mark Up (HTML/CSS)</h5>
+                <div>
+                  <h6>HTML</h6>
+                  <p>Semantic Tag</p>
+                </div>
+                <div>
+                  <h6>CSS-1</h6>
+                  <p>Common / Reset CSS</p>
+                </div>
+                <div>
+                  <h6>CSS-2</h6>
+                  <p>Nesting</p>
+                </div>
+              </div>
+            </div>
+            <div class="codereview_box reviewBoxThird">
+              <div class="reviewbox_left">
+                <div class="reviewbox_left_img"></div>
+                <button id="reviewbox_left_btn" class="reveiw_btn_third">
+                  자세히 보기
+                </button>
+              </div>
+              <div class="reviewbox_right">
+                <h5>Javascript</h5>
+                <div>
+                  <h6>Scroll Event</h6>
+                  <p>
+                    Header Fixed / main img size change <br />
+                    / gotoTop
+                  </p>
+                </div>
+                <div>
+                  <h6>Click Event</h6>
+                  <p>Keyword Box / Review Modal</p>
+                </div>
+                <div>
+                  <h6>Offset Event</h6>
+                  <p>Hedaer Click Evnet [data-target]</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <section class="modal">
+            <article class="codereview_modal_container modal_first">
+              <div class="modal_contents">
+                <div class="modal_navgation_box">
+                  <div class="modal_navgation">
+                    <span>
+                      <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    <p>READ ME</p>
+                  </div>
+                  <span id="modal_close" class="modal_close_first">
+                    <i class="fa-solid fa-xmark"></i>
+                  </span>
+                </div>
+                <div class="modal_title">
+                  <h4>Main Color Design</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>2024 Pantone Color : Peach Puzz color</p>
+                </div>
+                <p class="modal_desc">
+                  2024년 팬톤 컬러는 피치 퍼즈입니다. 핑크와 오렌지 사이에
+                  은은하게 자리 잡은 벨벳 같은 순한 복숭아 컬러로 마음과 몸과
+                  영혼을 풍요롭게 하며, 침착한 분위기를 자애내고 편안함과
+                  따뜻함을 제공하는 색상입니다.
+                </p>
+                <div class="modal_code modal_code_first"></div>
+                <div class="modal_title">
+                  <h4>Line Hompage</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>
+                    전체적인 레이아웃 구성을 Line 홈페이지로 구성, 배운 내용을
+                    바탕으로 레이아웃에 반영하여 페이지 구성
+                  </p>
+                </div>
+                <p class="modal_desc">
+                  홈페이지 레이아웃 구성만큼은 fullPage.js를 사용하지 않고 있는
+                  큰 홈페이지를 찾다가 "Line"의 홈페이지를 발견하게 되어, 제가
+                  사용할 수 있는 스킬들을 최대한 활용하고, 수업시간에 배운
+                  내용을 임의대로 추가하여 현재의 홈페이지 레이아웃구성을 가지게
+                  되었습니다.
+                </p>
+                <div class="modal_code modal_code_second"></div>
+              </div>
+            </article>
+            <article class="codereview_modal_container modal_second">
+              <div class="modal_contents">
+                <div class="modal_navgation_box">
+                  <div class="modal_navgation">
+                    <span>
+                      <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    <p>READ ME</p>
+                  </div>
+                  <span id="modal_close" class="modal_close_second">
+                    <i class="fa-solid fa-xmark"></i>
+                  </span>
+                </div>
+                <div class="modal_title">
+                  <h4>HTML</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Semantic Tag</p>
+                </div>
+                <p class="modal_desc">
+                  명시적이고 직관적인 구조의 설계를 위한 header, footer를
+                  비롯하여, nav, section, article, main 등 Semantic Tag를
+                  활용하여 HTML 설계를 하였습니다. 사람뿐만 아니라, 검색엔진,
+                  웹도 보다 빨리 코드를 이해하여 SEO(검색엔진최적화) 성능을
+                  향상시킬 수 있습니다.
+                </p>
+                <div class="modal_code modal_code_three"></div>
+                <div class="modal_title">
+                  <h4>CSS-1</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Common / Reset CSS</p>
+                </div>
+                <p class="modal_desc">
+                  효율적인 코드 작성을 위한 공통으로 Common / Reset CSS 파일을
+                  만들어 작성하였습니다. 기존 코드 외에도 외부에서 가져온
+                  서체등도 함께 관리하여 효율적인 코드 작성을 하고자 하였습니다.
+                </p>
+                <div class="modal_code modal_code_four">
+                  <div class="modal_code_four_1"></div>
+                  <div class="modal_code_four_2"></div>
+                </div>
+                <div class="modal_title">
+                  <h4>CSS-2</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Nesting</p>
+                </div>
+                <p class="modal_desc">
+                  CSS Nesting (CSS 중첩)을 활용하여 간결한 코드 작성을
+                  하였습니다. 코드의 전체 길이가 짧아지고, 처음 작성할때는
+                  직관적으로 코드 작성이 가능하였으나, CSS Nesting에 아직
+                  익숙하지 않아 코드 수정 시 부모와 자식 요소가 헷갈리는 문제가
+                  발생하였고 반응형 제작시 자식요소를 수정하려면 네스팅된 요소를
+                  모두 작성해야하여 데스크탑 코드 작성에 비해 비효율적인 부분이
+                  느껴졌습니다.
+                </p>
+                <div class="modal_code modal_code_five">
+                  <div class="modal_code_five_1"></div>
+                  <div class="modal_code_five_2"></div>
+                </div>
+              </div>
+            </article>
+            <article class="codereview_modal_container modal_third">
+              <div class="modal_contents">
+                <div class="modal_navgation_box">
+                  <div class="modal_navgation">
+                    <span>
+                      <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    <p>READ ME</p>
+                  </div>
+                  <span id="modal_close" class="modal_close_third">
+                    <i class="fa-solid fa-xmark"></i>
+                  </span>
+                </div>
+                <div class="modal_title">
+                  <h4>Scroll Event</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Header Fixed / main img size change / gotoTop</p>
+                </div>
+                <p class="modal_desc">
+                  window.addEventListener의 "scroll" 이벤트를 통하여
+                  window.scrollY 값을 구했습니다. 그리고 if/else 조건문으로
+                  classList.add/remove를 활용하여 "active" 값을 추가하거나 뺄 수
+                  있도록 설계하였습니다.
+                </p>
+                <div class="modal_code modal_code_six">
+                  <div class="modal_code_six_1"></div>
+                  <div class="modal_code_six_2"></div>
+                </div>
+                <div class="modal_title">
+                  <h4>Click Event</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Keyword Box / Review Modal</p>
+                </div>
+                <p class="modal_desc">
+                  keword box의 이벤트가 발생할 수 있도록 addEventListener의
+                  "click" 이벤트를 추가하여 각각의 이벤트가 클릭시 나타납니다.
+                  또한 keword box의 경우 add/remove 대신 "toggle"를 활용하여
+                  간결한 코드가 될 수 있도록 계획하였습니다.
+                </p>
+                <div class="modal_code modal_code_seven">
+                  <div class="modal_code_seven_1"></div>
+                  <div class="modal_code_seven_2"></div>
+                </div>
+                <div class="modal_title">
+                  <h4>Offset event</h4>
+                </div>
+                <div class="modal_title modal_sub_title">
+                  <p>Hedaer Click Evnet [data-target]</p>
+                </div>
+                <p class="modal_desc">
+                  header에 ul>li>a에 data-target 값을 추가한 후 각 section에도
+                  동일한 id값을 추가하여 해당 a[data-target]을 클릭하는 이벤트가
+                  발생할때 동일한 이름의 section으로 이동할 수 있게 하는
+                  이벤트를 추가했습니다. 각각의 section 높이에 맞게 - 80 ||
+                  -140의 높이조절을 주었고, behavior 발생시 smooth한 효과를 함께
+                  추가하였습니다.
+                </p>
+                <div class="modal_code modal_code_eight">
+                  <div class="modal_code_eight_1"></div>
+                  <div class="modal_code_eight_2"></div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </section>
+        <div class="top_container">
+          <button class="top_move_btn" href="#">
+            <i class="fa-solid fa-caret-up"></i>
+          </button>
+        </div>
+        <footer>
+          <div class="footer_wrapper">
+            <div class="footer_left">
+              <div class="logo">chae <br />young</div>
+              <p>
+                프론트엔드개발자 <br />
+                송채영입니다:) <br />
+                ⓒ2024-chaeyoung
+              </p>
+            </div>
+            <div class="footer_right">
+              <p>contact me.</p>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.instagram.com/1am_young/"
+                    target="_blank"
+                    class="insta"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/song-chaeyoung"
+                    target="_blank"
+                    class="github"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://velog.io/@scy512/posts"
+                    target="_blank"
+                    class="velog"
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
