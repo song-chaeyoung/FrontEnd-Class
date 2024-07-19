@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.contanier {
+  width: 1000px;
+  height: 600px;
+  background: #fff;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  h2 {
+    font-weight: bold;
+    justify-self: start;
+  }
+  .content {
+    display: grid;
+    grid: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-gap: 16px;
+    > div {
+      display: grid;
+      grid: 1fr / 1fr 2fr;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      p {
+        color: blue;
+      }
+    }
+    div .img {
+      grid-area: 1/1 / 3/2;
+    }
+    .content1 .img {
+      background: url("./images/best-item-01.png") center/contain no-repeat;
+    }
+    .content2 .img {
+      background: url("./images/best-item-02.png") center/contain no-repeat;
+    }
+    .content3 .img {
+      background: url("./images/best-item-03.png") center/contain no-repeat;
+    }
+    .content4 .img {
+      background: url("./images/best-item-05.png") center/contain no-repeat;
+    }
+    .content5 .img {
+      background: url("./images/best-item-05.png") center/contain no-repeat;
+    }
+    .content6 .img {
+      background: url("./images/best-item-06.png") center/contain no-repeat;
+    }
+    .content7 .img {
+      background: url("./images/best-item-07.png") center/contain no-repeat;
+    }
+    .content8 .img {
+      background: url("./images/best-item-08.png") center/contain no-repeat;
+    }
+    .content9 .img {
+      background: url("./images/best-item-09.png") center/contain no-repeat;
+    }
+    .content10 .img {
+      background: url("./images/best-item-10.png") center/contain no-repeat;
+    }
+    .content11 .img {
+      background: url("./images/best-item-11.png") center/contain no-repeat;
+    }
+    .content12 .img {
+      background: url("./images/best-item-12.png") center/contain no-repeat;
+    }
+    p {
+      grid-template-rows: 1 / 4;
+    }
+  }
+}

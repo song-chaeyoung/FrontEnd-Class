@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.parent {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "header header header header header" "welcome welcome welcome welcome welcome" "banner main main main aside" "footer footer footer footer footer";
+  div {
+    border: 1px solid #000;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    &.header {
+      grid-area: header;
+      height: 100px;
+      background: yellowgreen;
+      line-height: 100px;
+    }
+    &.welcome {
+      grid-area: welcome;
+      height: 500px;
+      background: url("./images/welcome-image.jpg") center/cover no-repeat;
+      line-height: 500px;
+    }
+    &.banner {
+      grid-area: banner;
+      width: 150px;
+      line-height: 400px;
+    }
+    &.main {
+      grid-area: main;
+      text-align: start;
+      padding: 10px;
+    }
+    &.aside {
+      grid-area: aside;
+      width: 150px;
+      line-height: 400px;
+    }
+    &.footer {
+      grid-area: footer;
+      height: 100px;
+      background: yellowgreen;
+      line-height: 100px;
+    }
+  }
+}

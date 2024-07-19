@@ -1,0 +1,63 @@
+// variables
+$complete-btn: royalblue;
+$loading-btn: green;
+$error-btn: red;
+$notice-btn-hover: #fff;
+$notice-btn-fs: 18px;
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// mix-in
+@mixin notice-button {
+  width: 150px;
+  padding: 7px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+  font-size: $notice-btn-fs;
+  &.complete:hover {
+    background: $complete-btn;
+    color: $notice-btn-hover;
+  }
+  &.loading:hover {
+    background: $loading-btn;
+    color: $notice-btn-hover;
+  }
+  &.error:hover {
+    background: $error-btn;
+    color: $notice-btn-hover;
+  }
+}
+
+// content
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .btns {
+    button {
+      &.complete {
+        color: $complete-btn;
+        border: 3px solid $complete-btn;
+        @include notice-button;
+      }
+      &.loading {
+        color: $loading-btn;
+        border: 3px solid $loading-btn;
+        @include notice-button;
+      }
+      &.error {
+        color: $error-btn;
+        border: 3px solid $error-btn;
+        @include notice-button;
+      }
+    }
+  }
+}
