@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* common */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* game */
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wrapper .wrapper_header {
+  width: 100%;
+  height: 32px;
+}
+.wrapper .wrapper_header .content_title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wrapper .wrapper_header .content_title .title {
+  color: #55b2d4;
+  font: bold 16px/1 "airal";
+}
+.wrapper .wrapper_header .content_title .game_subtitle {
+  font-size: 14px;
+}
+.wrapper .wrapper_header .divide_line {
+  width: 100%;
+  border-top: 1px solid gray;
+  margin: 4px 0;
+}
+.wrapper > div:nth-child(2) {
+  width: 100%;
+  height: 158px;
+  background: url("./contents/bg_1.jpg") center -90px/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper > div:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.wrapper > div:nth-child(3) {
+  width: 100%;
+  height: 158px;
+  background: url("./contents/bg_2.jpg") center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper > div:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.wrapper .game_container {
+  width: 100%;
+  height: 158px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 8px gray;
+  position: relative;
+}
+.wrapper .game_container img {
+  position: relative;
+}
+.wrapper .game_container .game_title {
+  position: relative;
+  color: #fff;
+  font: 700 16px/1 "arial";
+}
+.wrapper .game_container .game_subtitle {
+  position: relative;
+  color: #fff;
+  font: normal 14px/1 "airal";
+}
+.wrapper .game_container .word_text {
+  position: relative;
+}
+.wrapper .game_container .word_text input[type=text] {
+  border: none;
+  background: transparent;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 2px 8px;
+}
+.wrapper .game_container .word_text input[type=text]::-moz-placeholder {
+  opacity: 1;
+  color: #fff;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.wrapper .game_container .word_text input[type=text]::placeholder {
+  opacity: 1;
+  color: #fff;
+  transition: all 0.5s;
+}
+.wrapper .game_container .word_text input[type=text]:focus {
+  outline: none;
+}
+.wrapper .game_container .word_text input[type=text]:focus::-moz-placeholder {
+  opacity: 0;
+}
+.wrapper .game_container .word_text input[type=text]:focus::placeholder {
+  opacity: 0;
+}
+.wrapper .game_container .word_text input[type=submit] {
+  padding: 2px 8px;
+  border: none;
+  border-radius: 8px;
+  background: #f6f6f6;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.wrapper .game_container .word_text input[type=submit]:hover {
+  background: #ffe400;
+}
+.wrapper .game_container .word_result {
+  position: relative;
+  color: #ffe400;
+  font-weight: 800;
+}
+.wrapper .game_container .game_lotto_num {
+  position: relative;
+  background: #ffe400;
+  margin: 5px 0;
+  padding: 4px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.wrapper .game_container .game_lotto_num span {
+  color: #fff;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.wrapper .game_container .wrapper_lotto_btn {
+  position: relative;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 8px;
+  background: #f6f6f6;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.wrapper .game_container .wrapper_lotto_btn:hover {
+  background: #ffe400;
+}
