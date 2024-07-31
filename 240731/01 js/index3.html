@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./sale.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script3.js"></script>
+  </head>
+  <body>
+    <!-- <div class="container_top">
+      <div class="img">
+        <img
+          src="https://thumbs.dreamstime.com/b/sale-red-sign-sticker-isolated-white-background-40467403.jpg"
+          alt="sale"
+        />
+      </div>
+      <div class="top_input">
+        <div class="input_one">
+          <p>원래가격</p>
+          <input type="number" name="input_first" id="input_first" />
+          <p>원</p>
+        </div>
+        <div class="input_two">
+          <p>할인율</p>
+          <input type="number" name="input_second" id="input_second" />
+          <p>%</p>
+        </div>
+        <input type="submit" class="sumbit_btn" value="할인 가격 계산하기" />
+      </div>
+    </div>
+    <div class="result_text"></div> -->
+    <main class="contanier">
+      <section class="top_menu">
+        <article class="sale_img">
+          <img
+            src="https://thumbs.dreamstime.com/b/sale-red-sign-sticker-isolated-white-background-40467403.jpg"
+            alt="sale"
+          />
+        </article>
+        <article class="form_area">
+          <form action="http://127.0.0.1:5501" method="get" name="priceCalc">
+            <ul>
+              <li>
+                <label for="price">원래가격</label>
+                <input type="text" name="price" id="price" /> 원
+              </li>
+              <li>
+                <label for="rate">할인율</label>
+                <input type="text" name="rate" id="rate" /> %
+              </li>
+            </ul>
+            <input type="button" value="할인가격 계산하기" />
+          </form>
+        </article>
+      </section>
+      <section class="btm_info">
+        <p></p>
+      </section>
+    </main>
+  </body>
+</html>
