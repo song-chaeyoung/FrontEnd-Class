@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 14px;
+}
+body #container form {
+  width: 600px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+}
+body #container form fieldset {
+  padding: 30px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+body #container form fieldset legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+body #container form fieldset .field {
+  display: inline-block;
+  width: 70px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+body #container form fieldset .input_box {
+  display: inline-block;
+  width: 430px;
+  height: 35px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 5px;
+}
+body #container form fieldset .user_age {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+body #container form fieldset .user_alarm {
+  margin-right: 8px;
+}
+body #container form fieldset .user_alarm input {
+  margin-right: 4px;
+}
+body #container form input[type=submit] {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #aaa;
+  background: #eee;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}

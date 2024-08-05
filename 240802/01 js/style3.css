@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body.dark {
+  background: #222;
+  color: #eee;
+}
+body.dark main #toggle_box button {
+  background: #222;
+  border: 1px solid #eee;
+  color: #eee;
+}
+body main #toggle_box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+body main #toggle_box button {
+  padding: 5px 10px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body main #content {
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
