@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 10px;
+}
+
+button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 15px;
+  border: none;
+  background: #639;
+  color: #fff;
+  transform: translateX(0);
+  transition: all 1s;
+  cursor: pointer;
+}
+button.active {
+  transform: translateX(-110px);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background: #639;
+  color: #fff;
+  padding: 2rem;
+  font-size: 2rem;
+  transition: all 1s;
+  transform: translateX(120%);
+}
+nav li {
+  padding: 1rem 0;
+}
+nav.active {
+  transform: translateX(0);
+}

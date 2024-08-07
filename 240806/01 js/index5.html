@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./script5.js"></script>
+  </head>
+  <style>
+    ul,
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 22px;
+      & > button {
+        display: block;
+        &.active {
+          display: none;
+        }
+      }
+      #modal_box {
+        display: none;
+        #profile {
+          display: flex;
+          align-items: center;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          padding: 20px 40px;
+          position: relative;
+          button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+          }
+          img {
+            width: 200px;
+          }
+          #desc > ul {
+            li {
+              margin-bottom: 10px;
+            }
+          }
+        }
+        &.active {
+          display: block;
+        }
+      }
+    }
+  </style>
+  <body>
+    <button id="open">프로필 보기</button>
+    <div id="modal_box">
+      <div id="profile">
+        <button>닫기</button>
+        <img
+          src="https://isplus.com/data/isp/image/2023/08/03/isp20230803000109.600x.0.jpg"
+          alt="iu"
+        />
+        <div id="desc">
+          <ul>
+            <li><a href="javascript:void(0)">이름 : 아이유 </a></li>
+            <li><a href="javascript:void(0)">직업 : 가수 </a></li>
+            <li><a href="javascript:void(0)">취미 : 노래 </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

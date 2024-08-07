@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+  h2 {
+    font-size: 2rem;
+  }
+  #container {
+    width: 700px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .arrow {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: #ddd;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      font-size: 2rem;
+      opacity: 0.2;
+      transition: opacity 0.5s;
+      cursor: pointer;
+      z-index: 100;
+      &:hover {
+        opacity: 1;
+      }
+      &#left {
+        left: 0;
+      }
+      &#right {
+        right: 0;
+      }
+    }
+  }
+}

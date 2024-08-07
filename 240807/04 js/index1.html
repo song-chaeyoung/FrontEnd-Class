@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./script1.js"></script>
+    <style>
+      * {
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        .container {
+          width: 1200px;
+          .heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            .desc {
+              width: 70%;
+              p {
+                margin: 20px 0;
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <div class="img">
+          <img
+            style="width: 280px"
+            src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/b24c79dc-427b-4722-9e0c-2ca66c064ecf/G.T.+HUSTLE+3+EP+OLY.png"
+            alt="nike"
+          />
+        </div>
+        <div class="desc">
+          <h1>상품설명</h1>
+          <h2>상품명 : 나이키 G.T. 허슬 3 EP 일렉트릭</h2>
+          <p>
+            이중 스택 줌 에어 유닛이 막강한 파워를 제공하고 통기성 좋은 갑피가
+            안정성과 시원함을 유지해 주니, 다음 승자가 누가 될지는 뻔한
+            일이겠죠? 바로 당신입니다.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            assumenda odio voluptate eos consequuntur debitis facere iure
+            explicabo officia quis, ducimus illum mollitia omnis, sequi
+            inventore quidem sunt suscipit natus. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Autem assumenda odio voluptate eos
+            consequuntur debitis facere iure explicabo officia quis, ducimus
+            illum mollitia omnis, sequi inventore quidem sunt suscipit natus.
+          </p>
+          <button id="order">상품주문하기</button>
+        </div>
+      </div>
+      <div class="orderinfo"></div>
+    </div>
+  </body>
+</html>

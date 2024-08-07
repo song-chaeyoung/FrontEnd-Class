@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.star_rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #333;
+  width: 250px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.star_rating .stars .fa-star {
+  cursor: pointer;
+}
+.star_rating .stars .fa-star.active {
+  color: yellow;
+  text-shadow: 0, 0, 8px, yellow;
+}
+.star_rating .print {
+  color: #fff;
+}
