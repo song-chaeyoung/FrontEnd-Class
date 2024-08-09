@@ -1,0 +1,79 @@
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+// variable
+$border: #ddd;
+
+// content
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+  .container {
+    width: 400px;
+    h1 {
+      text-align: center;
+    }
+    form {
+      margin: 30px 0;
+      width: 100%;
+      font-size: 1.6rem;
+      li {
+        margin-bottom: 20px;
+        label {
+          display: inline-block;
+          width: 80px;
+          text-align: center;
+        }
+        input[type="text"] {
+          width: 300px;
+          height: 30px;
+          border: none;
+          border-bottom: 1px solid $border;
+        }
+      }
+      input[type="submit"] {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+      }
+    }
+    table {
+      border: 1px solid $border;
+      border-collapse: collapse;
+      font-size: 1.6rem;
+      text-align: center;
+      th {
+        border: 1px solid $border;
+        padding: 10px;
+        &:nth-child(1) {
+          width: 200px;
+        }
+        &:nth-child(2) {
+          width: 300px;
+        }
+      }
+      td {
+        border: 1px solid $border;
+        padding: 10px;
+      }
+    }
+  }
+}

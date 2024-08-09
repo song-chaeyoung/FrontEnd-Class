@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+}
+body .container {
+  width: 400px;
+}
+body .container h1 {
+  text-align: center;
+}
+body .container form {
+  margin: 30px 0;
+  width: 100%;
+  font-size: 1.6rem;
+}
+body .container form li {
+  margin-bottom: 20px;
+}
+body .container form li label {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+body .container form li input[type=text] {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+body .container form input[type=submit] {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+body .container table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  font-size: 1.6rem;
+  text-align: center;
+}
+body .container table th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+body .container table th:nth-child(1) {
+  width: 200px;
+}
+body .container table th:nth-child(2) {
+  width: 300px;
+}
+body .container table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
