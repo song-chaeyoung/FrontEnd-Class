@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .loading {
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid #ddd; */
+    position: relative;
+    span {
+      width: 15px;
+      height: 15px;
+      background: #ddd;
+      position: absolute;
+      animation: loading 1.6s ease-in infinite;
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.8s;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    background: crimson;
+    top: 0;
+    left: 0;
+  }
+  25% {
+    background: orange;
+    top: 0;
+    left: 100%;
+  }
+  50% {
+    background: dodgerblue;
+    top: 100%;
+    left: 100%;
+  }
+  75% {
+    background: yellowgreen;
+    top: 100%;
+    left: 0%;
+  }
+  100% {
+    background: pink;
+    top: 0;
+    left: 0;
+  }
+}
