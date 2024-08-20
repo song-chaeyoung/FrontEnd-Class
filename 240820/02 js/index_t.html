@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./script_t.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: url("background.jpg") center/cover no-repeat;
+        color: #fff;
+        main {
+          width: 700px;
+          height: 480px;
+          background: rgba(0, 0, 0, 0.5);
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 100px;
+          border-radius: 10px;
+          form {
+            width: 90%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+            input[type="text"] {
+              padding: 6px;
+              width: 280px;
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+          #result {
+            font-size: 40px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <form action="http://127.0.0.1:5501" method="get">
+        <label for="userid">User ID</label>
+        <input
+          type="text"
+          name="userid"
+          id="userid"
+          placeholder="숫자로 된 ID를 입력하세요."
+        />
+      </form>
+      <p id="result">유저 검색 결과 없음</p>
+    </main>
+  </body>
+</html>

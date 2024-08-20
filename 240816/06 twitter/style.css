@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("https://png.pngtree.com/background/20230617/original/pngtree-glossy-twitter-icon-in-3d-rendering-against-a-dark-black-background-picture-image_3698681.jpg") center/cover no-repeat;
+  color: #fff;
+}
+body main {
+  width: 960px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+body main #tweetTextArea {
+  width: 100%;
+  height: 80%;
+  resize: none;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 20px;
+  font-size: 24px;
+}
+body main #tweetTextArea:focus {
+  outline: none;
+}
+body main #tweetBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+body main #tweetBtn:hover {
+  background: #000;
+  color: #fff;
+}
