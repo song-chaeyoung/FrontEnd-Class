@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- anime -->
+    <script src="./anime.js"></script>
+    <!-- custom -->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        .circle {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          &.circle1 {
+            background: burlywood;
+          }
+          &.circle2 {
+            background: mediumaquamarine;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle circle2"></div>
+    <div class="circle circle1"></div>
+  </body>
+</html>
