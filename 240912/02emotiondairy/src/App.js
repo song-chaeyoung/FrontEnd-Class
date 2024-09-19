@@ -41,19 +41,19 @@ const reducer = (state, action) => {
 const mockData = [
   {
     id: "mock1",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 1,
     content: "mock1",
     emotionId: 1,
   },
   {
     id: "mock2",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 2,
     content: "mock2",
     emotionId: 2,
   },
   {
     id: "mock3",
-    date: new Date().getTime(),
+    date: new Date().getTime() - 3,
     content: "mock3",
     emotionId: 3,
   },
@@ -61,7 +61,6 @@ const mockData = [
 
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
-console.log(DiaryDispatchContext);
 
 const App = () => {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
@@ -117,7 +116,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/new" element={<New />} />
-              <Route path="/edit" element={<Edit />} />
+              <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
             </Routes>
             {/* <div>
