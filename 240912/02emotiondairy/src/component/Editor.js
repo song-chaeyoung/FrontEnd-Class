@@ -6,9 +6,10 @@ import EmotionItem from "./EmotionItem";
 import { getFormattedDate, emotionList } from "../util";
 
 const EditorSection = styled.div`
-  margin-bottom: 40px;
+  margin: 40px 0;
   & h4 {
     font-size: 22px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -22,7 +23,6 @@ const Textarea = styled.textarea`
   font-family: "Nanum Pen Script", cursive;
   width: 100%;
   min-height: 200px;
-  // margin: 0 20px;
   resize: none;
 `;
 

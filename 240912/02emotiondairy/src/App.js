@@ -29,7 +29,9 @@ const reducer = (state, action) => {
       );
     }
     case "DELETE": {
-      return state.filter((item) => String(item.id) !== String(action.data.id));
+      return state.filter(
+        (item) => String(item.id) !== String(action.targetID)
+      );
     }
 
     default: {
@@ -111,7 +113,7 @@ const App = () => {
   } else {
     return (
       <DiaryStateContext.Provider value={data}>
-        <DiaryDispatchContext.Provider value={(onCreate, onDelete, onUpdate)}>
+        <DiaryDispatchContext.Provider value={{ onCreate, onDelete, onUpdate }}>
           <Wrapper>
             <Routes>
               <Route path="/" element={<Home />} />
