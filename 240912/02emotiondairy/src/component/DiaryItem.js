@@ -27,6 +27,7 @@ const ButtonSection = styled.div`
 
 const DateItem = styled.div`
   font-size: 30px;
+  font-size: var(--font-size);
   font-weight: bold;
   margin-bottom: 5px;
 `;
@@ -94,4 +95,4 @@ const DiaryItem = ({ id, date, content, emotionId }) => {
   );
 };
 
-export default DiaryItem;
+export default React.memo(DiaryItem);
