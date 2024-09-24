@@ -1,5 +1,10 @@
+import { useState, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+import { auth } from "./firebas";
+import reset from "styled-reset";
 import Layout from "./components/Layout";
+import LoadingScreen from "./components/LoadingScreen";
 import Home from "./routes/Home";
 import Profile from "./routes/Profile";
 import Login from "./routes/Login";
@@ -18,22 +23,56 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile />,
       },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "createaccout",
-        element: <CreateAccount />,
-      },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/createaccout",
+    element: <CreateAccount />,
   },
 ]);
 
+const GlobalStyles = createGlobalStyle`
+  ${reset}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul, li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+`;
+
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const init = async () => {
+    // await firebase Authentication (검증 시간)
+    await auth.authStateReady();
+    await setIsLoading(false);
+  };
+  useEffect(() => {
+    init();
+  }, []);
   return (
     <>
-      <RouterProvider router={router} />
+      <GlobalStyles />
+      {isLoading ? <LoadingScreen /> : <RouterProvider router={router} />}
     </>
   );
 }
