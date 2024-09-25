@@ -1,52 +1,17 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { auth } from "../firebas";
-
-const Wrapper = styled.div`
-  width: 420px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 50px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-`;
-
-const Title = styled.h1`
-  font-size: 42px;
-`;
-
-const Form = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  font-size: 16px;
-  &[type="submit"] {
-    margin-top: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-`;
-
-const Error = styled.span`
-  color: tomato;
-  font-weight: 600;
-  font-size: 20px;
-`;
+import { update } from "firebase/database";
+import { FirebaseError } from "firebase/app";
+import {
+  Form,
+  Input,
+  Title,
+  Wrapper,
+  Error,
+} from "../components/auth-components";
 
 const CreateAccount = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -54,6 +19,7 @@ const CreateAccount = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const nevigate = useNavigate();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {
@@ -74,10 +40,21 @@ const CreateAccount = () => {
       // create an account
       // set the name of the user
       // redirect to the home page
-      await createUserWithEmailAndPassword(auth, email, password);
+      setIsLoading(true);
+      const credentials = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      await updateProfile(credentials.user, {
+        displayName: name,
+      });
+
+      nevigate("/");
     } catch (e) {
-      // setErr()
-      console.log(e);
+      if (e instanceof FirebaseError) {
+        setErr(e.message);
+      }
     } finally {
       setIsLoading(false);
     }
