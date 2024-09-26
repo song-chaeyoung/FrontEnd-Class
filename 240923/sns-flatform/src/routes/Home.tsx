@@ -1,19 +1,14 @@
 import React from "react";
-import { auth } from "../firebas";
-import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import PostForm from "../components/PostForm";
+
+const Wrapper = styled.div``;
 
 const Home = () => {
-  const nevigate = useNavigate();
-
-  const logout = () => {
-    auth.signOut();
-    nevigate("/login");
-  };
-
   return (
-    <h1>
-      <button onClick={logout}>Log out</button>
-    </h1>
+    <Wrapper>
+      <PostForm />
+    </Wrapper>
   );
 };
 
