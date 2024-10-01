@@ -1,9 +1,9 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+
 import { auth } from "../firebas";
-import { update } from "firebase/database";
+
 import { FirebaseError } from "firebase/app";
 import {
   Form,
