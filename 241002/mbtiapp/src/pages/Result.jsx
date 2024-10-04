@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "react-bootstrap";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { ResultData } from "../assets/questiondata";
+import KaKaoShareBtn from "../components/KaKaoShareBtn";
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,8 +12,11 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 20px;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 110px);
   color: #fff;
+  @media screen and (max-width: 780px) {
+    gap: 0;
+  }
 `;
 
 const Header = styled.div`
@@ -25,12 +29,15 @@ const Contents = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  @media screen and (max-width: 780px) {
+    gap: 4px;
+  }
 `;
 
 const Title = styled.div`
   font-size: 30px;
-  margin: 20px 0 10px;
+  margin: 10px 0;
 `;
 
 const LogoImg = styled.div`
@@ -42,10 +49,18 @@ const LogoImg = styled.div`
 `;
 
 const Desc = styled.div`
+  text-align: center;
   font-size: 20px;
-  margin: 10px 0;
   line-height: 150%;
   width: 340px;
+  @media screen and (max-width: 780px) {
+  }
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 
 const Result = () => {
@@ -63,8 +78,6 @@ const Result = () => {
     setData(result);
   }, [mbti]);
 
-  console.log(data);
-
   return (
     <Wrapper>
       <Header>예비집사 판별기</Header>
@@ -79,7 +92,10 @@ const Result = () => {
           🐱
         </Desc>
         <Desc>{data.desc}</Desc>
-        <Button onClick={handleClickButton}>테스트 다시 시작하기</Button>
+        <ButtonGroup>
+          <Button onClick={handleClickButton}>테스트 다시 시작하기</Button>
+          <KaKaoShareBtn data={data} />
+        </ButtonGroup>
       </Contents>
     </Wrapper>
   );
