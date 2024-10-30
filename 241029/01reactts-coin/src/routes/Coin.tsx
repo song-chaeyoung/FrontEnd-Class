@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useLocation, Outlet } from "react-router-dom";
+import { useParams, useLocation, Outlet, useMatch } from "react-router-dom";
 import styled from "styled-components";
-import Chart from "./Chart";
-import Price from "./Price";
+import { Link } from "react-router-dom";
+import { fetchCoinInfo, fetchPriceInfo } from "../api";
+import { useQuery } from "@tanstack/react-query";
+import { CoinInterface } from "./Coins";
+import { Helmet } from "react-helmet";
 
 const Container = styled.div`
   width: 100%;
@@ -69,6 +72,34 @@ const Description = styled.div`
   }
 `;
 
+const Tabs = styled.div`
+  width: 90%;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+`;
+
+const Tab = styled.span<IsActive>`
+  flex: 1;
+  text-align: center;
+  background: ${(props) =>
+    props.isActive ? props.theme.textColor : props.theme.accentColor};
+  color: ${(props) =>
+    props.isActive ? props.theme.accentColor : props.theme.textColor};
+  padding: 8px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background: ${({ theme }) => theme.textColor};
+    color: ${({ theme }) => theme.accentColor};
+  }
+  > a {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 interface RouterParams {
   coinId: string;
 }
@@ -77,15 +108,15 @@ interface LocationState {
   state: string;
 }
 
-interface InfoData {
-  id: string;
-  name: string;
-  symbol: string;
-  rank: number;
-  is_new: boolean;
-  is_active: boolean;
-  type: string;
-}
+// interface InfoData {
+//   id: string;
+//   name: string;
+//   symbol: string;
+//   rank: number;
+//   is_new: boolean;
+//   is_active: boolean;
+//   type: string;
+// }
 
 interface PriceData {
   id: string;
@@ -121,79 +152,107 @@ interface PriceData {
   };
 }
 
+interface IsActive {
+  isActive: boolean;
+}
+
 const Coin = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [info, setInfo] = useState<InfoData>();
-  const [price, setPrice] = useState<PriceData>();
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [info, setInfo] = useState<InfoData>();
+  // const [price, setPrice] = useState<PriceData>();
   const { coinId } = useParams<RouterParams | any>();
   const { state } = useLocation() as LocationState;
+  const priceMatch = useMatch("/:coinId/price");
+  const chartMatch = useMatch("/:coinId/chart");
 
-  useEffect(() => {
-    (async () => {
-      const infoData = await (
-        await fetch(
-          `https://my-json-server.typicode.com/Divjason/coinlist/coins/${coinId}`
-        )
-      ).json();
-      const priceData = await (
-        await fetch(
-          `https://my-json-server.typicode.com/Divjason/coinprice/coinprice/${coinId}`
-        )
-      ).json();
+  // useEffect(() => {
+  //   (async () => {
+  //     const infoData = await (
+  //       await fetch(
+  //         `https://my-json-server.typicode.com/Divjason/coinlist/coins/${coinId}`
+  //       )
+  //     ).json();
+  //     const priceData = await (
+  //       await fetch(
+  //         `https://my-json-server.typicode.com/Divjason/coinprice/coinprice/${coinId}`
+  //       )
+  //     ).json();
 
-      setInfo(infoData);
-      setPrice(priceData);
-      setIsLoading(false);
-    })();
-  }, []);
+  //     setInfo(infoData);
+  //     setPrice(priceData);
+  //     setIsLoading(false);
+  //   })();
+  // }, []);
 
+  const { isLoading: infoLoading, data: infoData } = useQuery<CoinInterface>({
+    queryKey: ["coinInfo", coinId],
+    queryFn: () => fetchCoinInfo(coinId),
+  });
+
+  const { isLoading: priceLoading, data: priceData } = useQuery<PriceData>({
+    queryKey: ["coinInfo", coinId],
+    queryFn: () => fetchPriceInfo(coinId),
+    // refetchInterval: 5000,
+  });
+  // console.log(priceData);
+  const loading = infoLoading || priceLoading;
   return (
     <>
       <Container>
+        <Helmet>
+          <title>{coinId?.toUpperCase()}</title>
+        </Helmet>
         <Header>
           <Title>
-            {" "}
-            {state ? state : isLoading ? "Loading..." : info?.name}
+            {state ? state : loading ? "Loading..." : infoData?.name}
           </Title>
         </Header>
-        {isLoading ? (
-          <Loader>Lading...</Loader>
+        {loading ? (
+          <Loader>Loading...</Loader>
         ) : (
           <>
             <Overview>
               <OverviewItem>
                 <span>Rank : </span>
-                <span>{info?.rank}</span>
+                <span>{infoData?.rank}</span>
               </OverviewItem>
               <OverviewItem>
                 <span>Symbol : </span>
-                <span>{info?.symbol}</span>
+                <span>{infoData?.symbol}</span>
               </OverviewItem>
               <OverviewItem>
                 <span>Open Source : </span>
-                <span>{info?.is_active ? "Yes" : "No"}</span>
+                <span>{infoData?.is_active ? "Yes" : "No"}</span>
               </OverviewItem>
             </Overview>
             <Description>
-              <b>💡Infomation of {info?.type}</b> : Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Obcaecati impedit laboriosam nam
-              repudiandae aliquam, unde reprehenderit, provident nulla, dolor
-              excepturi omnis iure doloribus architecto? Temporibus vero minima
-              quaerat deleniti praesentium?
+              <b>💡Infomation of {infoData?.type}</b> : Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Obcaecati impedit laboriosam
+              nam repudiandae aliquam, unde reprehenderit, provident nulla,
+              dolor excepturi omnis iure doloribus architecto? Temporibus vero
+              minima quaerat deleniti praesentium?
             </Description>
             <Overview>
               <OverviewItem>
                 <span>Total Supply : </span>
-                <span>{price?.total_supply}</span>
+                <span>{priceData?.total_supply}</span>
               </OverviewItem>
               <OverviewItem>
                 <span>Max Supply : </span>
-                <span>{price?.max_supply}</span>
+                <span>{priceData?.max_supply}</span>
               </OverviewItem>
             </Overview>
-            <Outlet />
+            <Tabs>
+              <Tab isActive={chartMatch !== null}>
+                <Link to={`/${coinId}/chart`}>Chart</Link>
+              </Tab>
+              <Tab isActive={priceMatch !== null}>
+                <Link to={`/${coinId}/price`}>Price</Link>
+              </Tab>
+            </Tabs>
           </>
         )}
+        <Outlet />
       </Container>
     </>
   );
