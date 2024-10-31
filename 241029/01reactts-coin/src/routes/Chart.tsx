@@ -4,20 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchCoinHistory } from "../api";
 import ApexCharts from "react-apexcharts";
 import styled from "styled-components";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "../atoms";
 
 const Loading = styled.div``;
 
 const Container = styled.div``;
 
 interface CoinHistory {
-  // time_open: number;
-  // time_close: number;
-  // open: string;
-  // high: string;
-  // low: string;
-  // close: string;
-  // volume: string;
-  // market_cap: number;
   time_open: number;
   time_close: number;
   open: string;
@@ -29,31 +23,33 @@ interface CoinHistory {
 }
 
 const Chart = () => {
+  const isDark = useRecoilValue(isDarkAtom);
   const { coinId } = useParams();
-
   const { isLoading, data } = useQuery<CoinHistory[]>({
     queryKey: ["coinHistory", coinId],
     queryFn: () => fetchCoinHistory(coinId),
-    // refetchInterval: 5000,
+    refetchInterval: 5000,
   });
+
+  const chartData = Array.isArray(data) && data.length > 0 ? data : [];
 
   return (
     <Container>
       {isLoading ? (
         <Loading>Loading Chart...</Loading>
-      ) : (
+      ) : chartData.length > 0 ? (
         <ApexCharts
           width={450}
           type="line"
           series={[
             {
               name: "priceChart",
-              data: data?.map((it) => Number(it.close)) || [],
+              data: chartData?.map((it) => Number(it.close)) || [],
             },
           ]}
           options={{
             theme: {
-              mode: "dark",
+              mode: isDark ? "dark" : "light",
             },
             stroke: {
               width: 4,
@@ -63,36 +59,48 @@ const Chart = () => {
               toolbar: {
                 show: false,
               },
-              background: "transparent",
+              background: "rgba(255,255,255,0.1)",
             },
             grid: {
-              show: false,
+              show: true,
             },
             xaxis: {
               labels: {
                 show: true,
+                style: {
+                  fontSize: "10px",
+                  colors: "grey",
+                },
               },
+              categories: chartData.map((price) =>
+                new Date(price.time_close * 1000).toLocaleDateString()
+              ),
             },
             yaxis: {
               labels: {
                 show: true,
+                style: {
+                  fontSize: "12px",
+                  colors: "grey",
+                },
+                formatter: (value) => `${value.toFixed(0)}`,
               },
             },
-            colors: ["red"],
+            colors: ["#ff0844"],
             fill: {
               type: "gradient",
               gradient: {
-                gradientToColors: ["blue"],
+                gradientToColors: ["#005bea"],
                 stops: [0, 100],
               },
             },
             tooltip: {
-              y: {
-                formatter: (value) => `${value.toFixed(0)}`,
-              },
+              y: {},
             },
           }}
         />
+      ) : (
+        "No Data available to display chart..."
       )}
     </Container>
   );

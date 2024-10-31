@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCoins } from "../api";
 import { Helmet } from "react-helmet";
+import { isDarkAtom } from "../atoms";
+import { useSetRecoilState } from "recoil";
 
 const Container = styled.main`
   width: 100%;
@@ -14,7 +15,9 @@ const Container = styled.main`
   padding-top: 100px;
 `;
 
-const Header = styled.header``;
+const Header = styled.header`
+  position: relative;
+`;
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.accentColor};
@@ -23,14 +26,26 @@ const Title = styled.h1`
   font-size: 40px;
 `;
 
+const Button = styled.button`
+  position: absolute;
+  top: 0;
+  right: -80%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background: ${({ theme }) => theme.accentColor};
+  color: ${({ theme }) => theme.textColor};
+  cursor: pointer;
+`;
+
 const CoinList = styled.ul`
   width: 100%;
   padding: 0 20px;
 `;
 
 const Coin = styled.li`
-  background: ${({ theme }) => theme.textColor};
-  color: ${({ theme }) => theme.bgColor};
+  background: ${({ theme }) => theme.cardBgColor};
+  color: ${({ theme }) => theme.textColor};
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -101,6 +116,7 @@ export interface CoinInterface {
 // ];
 
 const Coins = () => {
+  const setterFnc = useSetRecoilState(isDarkAtom);
   // const [isLoading, setIsLoading] = useState(true);
   // const [coins, setCoins] = useState<CoinInterface[]>([]);
 
@@ -120,8 +136,6 @@ const Coins = () => {
     queryFn: fetchCoins,
   });
 
-  console.log();
-
   return (
     <Container>
       <Helmet>
@@ -129,6 +143,7 @@ const Coins = () => {
       </Helmet>
       <Header>
         <Title>Coin List</Title>
+        <Button onClick={() => setterFnc((prev) => !prev)}>Mode</Button>
       </Header>
       {isLoading ? (
         <Loader>"Loading..."</Loader>

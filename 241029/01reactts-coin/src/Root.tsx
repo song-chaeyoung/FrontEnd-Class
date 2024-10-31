@@ -4,9 +4,10 @@ import { Outlet } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { lightTheme, darkTheme } from "./theme";
 import { ThemeProvider } from "styled-components";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "./atoms";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
   * {
     margin: 0;
@@ -31,9 +32,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Root = () => {
+  const isDark = useRecoilValue(isDarkAtom);
+
   return (
     <>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyle />
         <Outlet />
         <ReactQueryDevtools
