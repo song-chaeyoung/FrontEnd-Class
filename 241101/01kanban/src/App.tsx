@@ -33,7 +33,7 @@ const Wrapper = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   margin: 0 auto;
 `;
 
@@ -48,28 +48,32 @@ const Boards = styled.div`
 
 const App = () => {
   const [toDos, setToDos] = useRecoilState(toDoState);
-  const onDragEnd = ({ draggableId, destination, source }: DropResult) => {
+  const onDragEnd = (info: DropResult) => {
+    // console.log(draggableId, destination, source);
+    console.log(info);
+    const { destination, source } = info;
+    if (!destination) return;
+
     if (destination?.droppableId === source.droppableId) {
       setToDos((oldToDos) => {
         const boardCopy = [...oldToDos[source.droppableId]];
+        const taskObj = boardCopy[source.index];
         boardCopy.splice(source.index, 1);
-        boardCopy.splice(destination.index, 0, draggableId);
+        boardCopy.splice(destination.index, 0, taskObj);
         return {
           ...oldToDos,
           [source.droppableId]: boardCopy,
         };
       });
     }
-
     if (destination?.droppableId !== source.droppableId) {
-      if (!destination) return;
-
       setToDos((oldToDos) => {
         const sourceBoard = [...oldToDos[source.droppableId]];
-        const destinationBoard = [...oldToDos[destination?.droppableId]];
-        sourceBoard.splice(source.index, 1);
-        destinationBoard.splice(destination.index, 0, draggableId);
+        const taskObj = sourceBoard[source.index];
+        const destinationBoard = [...oldToDos[destination.droppableId]];
 
+        sourceBoard.splice(source.index, 1);
+        destinationBoard.splice(destination.index, 0, taskObj);
         return {
           ...oldToDos,
           [source.droppableId]: sourceBoard,
@@ -77,6 +81,32 @@ const App = () => {
         };
       });
     }
+    // if (destination?.droppableId !== source.droppableId) {
+    //   if (!destination) return;
+    //   setToDos((oldToDos) => {
+    //     const sourceBoard = [...oldToDos[source.droppableId]];
+    //     const destinationBoard = [...oldToDos[destination?.droppableId]];
+    //     sourceBoard.splice(source.index, 1);
+    //     destinationBoard.splice(destination.index, 0, draggableId);
+    //     return {
+    //       ...oldToDos,
+    //       [source.droppableId]: sourceBoard,
+    //       [destination.droppableId]: destinationBoard,
+    //     };
+    //   });
+    // }
+
+    // if (destination?.droppableId === source.droppableId) {
+    //   setToDos((oldToDos) => {
+    //     const boardCopy = [...oldToDos[source.droppableId]];
+    //     boardCopy.splice(source.index, 1);
+    //     boardCopy.splice(destination.index, 0, draggableId);
+    //     return {
+    //       ...oldToDos,
+    //       [source.droppableId]: boardCopy,
+    //     };
+    //   });
+    // }
 
     // setToDos((oldToDos) => {
     //   const copyToDos = [...oldToDos];
