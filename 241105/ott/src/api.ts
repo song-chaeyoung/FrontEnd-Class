@@ -1,12 +1,6 @@
 const API_KEY = "c9762f0f1a7ee0b4d60fd9e75af3f5e7";
 const BASE_PATH = "https://api.themoviedb.org/3";
 
-export const getMovies = () => {
-  return fetch(
-    `${BASE_PATH}/movie/now_playing?api_key=${API_KEY}&language=ko-kr&page=1`
-  ).then((response) => response.json());
-};
-
 interface Movie {
   adult: boolean;
   backdrop_path: string;
@@ -34,3 +28,21 @@ export interface GetMoviesResult {
   total_pages: number;
   total_results: number;
 }
+
+export const getMovies = () => {
+  return fetch(
+    `${BASE_PATH}/movie/now_playing?api_key=${API_KEY}&language=ko-kr&page=1`
+  ).then((response) => response.json());
+};
+
+export const searchContents = (keyword: string | null) => {
+  return fetch(
+    `${BASE_PATH}/search/multi?api_key=${API_KEY}&query=${keyword}&include_adult=false&language=ko-kr`
+  ).then((response) => response.json());
+};
+
+export const searchGeneres = () => {
+  return fetch(`${BASE_PATH}/genre/movie/list?api_key=${API_KEY}`).then(
+    (response) => response.json()
+  );
+};
