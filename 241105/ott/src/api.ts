@@ -1,10 +1,10 @@
 const API_KEY = "c9762f0f1a7ee0b4d60fd9e75af3f5e7";
 const BASE_PATH = "https://api.themoviedb.org/3";
 
-interface Movie {
+export interface Movie {
   adult: boolean;
   backdrop_path: string;
-  genre_ids: object;
+  genre_ids: number[];
   id: number;
   original_language: string;
   original_title: string;
@@ -37,12 +37,24 @@ export const getMovies = () => {
 
 export const searchContents = (keyword: string | null) => {
   return fetch(
-    `${BASE_PATH}/search/multi?api_key=${API_KEY}&query=${keyword}&include_adult=false&language=ko-kr`
+    `${BASE_PATH}/search/movie?api_key=${API_KEY}&query=${keyword}&include_adult=false&language=ko-kr`
   ).then((response) => response.json());
 };
 
 export const searchGeneres = () => {
   return fetch(`${BASE_PATH}/genre/movie/list?api_key=${API_KEY}`).then(
+    (response) => response.json()
+  );
+};
+
+export const getReviews = (ids: number) => {
+  return fetch(`${BASE_PATH}/movie/${ids}/reviews?api_key=${API_KEY}`).then(
+    (response) => response.json()
+  );
+};
+
+export const getVideos = (movieId: number) => {
+  return fetch(`${BASE_PATH}/movie/${movieId}/videos?api_key=${API_KEY}`).then(
     (response) => response.json()
   );
 };
