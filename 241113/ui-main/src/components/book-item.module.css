@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 10px;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  /* white-space: nowrap; */
+  & > img {
+    width: 150px;
+  }
+  .info {
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .subTitle {
+      word-break: keep-all;
+    }
+    .author {
+      color: gray;
+      word-break: keep-all;
+    }
+  }
+}
