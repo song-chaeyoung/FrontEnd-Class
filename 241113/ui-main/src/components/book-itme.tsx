@@ -7,14 +7,13 @@ const BookItme = ({
   id,
   title,
   subTitle,
-  description,
   author,
   publisher,
   coverImgUrl,
 }: BookData) => {
   return (
     <Link href={`/book/${id}`} className={style.container}>
-      <img src={coverImgUrl} />
+      <img src={coverImgUrl} alt="bookURL" />
       <div className={style.info}>
         <div className={style.title}>{title}</div>
         <div className={style.subTitle}>{subTitle}</div>
