@@ -3,8 +3,8 @@
 import styles from "./page.module.css";
 // import ClientComponent from "../../components/client-component";
 // import ServerComponent from "../../components/server-component";
-import ClientComponent from "@/components/client-component";
-import ServerComponent from "@/components/server-component";
+// import ClientComponent from "@/components/client-component";
+// import ServerComponent from "@/components/server-component";
 
 export default function Home() {
   // console.log("컴포넌트 실행");
@@ -16,9 +16,9 @@ export default function Home() {
   return (
     <div className={styles.page}>
       Index Page
-      <ClientComponent>
+      {/* <ClientComponent>
         <ServerComponent />
-      </ClientComponent>
+      </ClientComponent> */}
     </div>
   );
 }

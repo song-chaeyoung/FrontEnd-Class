@@ -1,0 +1,16 @@
+//- doctype html
+//- html(lang="ko")
+//-   head
+//-     title= nodejs
+//-   body
+//-     h1 Welcome to nodejs
+//-     include partials/footer.pug
+extends base.pug
+include mixins/video
+
+block content
+  //- h2 Welecome Here you will see the following videos!
+  each video in videos 
+    +video(video)
+  else 
+    li Sorry Nothing Found.  
