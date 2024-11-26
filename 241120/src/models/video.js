@@ -1,15 +1,33 @@
 import mongoose from "mongoose";
 
 const videoSchema = new mongoose.Schema({
-  title: String,
-  createdAt: String,
-  description: String,
-  hashtags: [{ type: String }],
+  title: {
+    type: String,
+    trim: true,
+    uppercase: true,
+    maxLength: 80,
+    required: true,
+  },
+  description: { type: String, required: true, minLength: 5 },
+  createdAt: { type: Date, required: true, default: Date.now() },
+  hashtags: [{ type: String, trim: true }],
   meta: {
-    views: Number,
-    rating: Number,
+    views: { type: Number, required: true, default: 0 },
+    rating: { type: Number, required: true, default: 0 },
   },
 });
+
+export const formHashtags = (hashtags) => {
+  return hashtags
+    .split(",")
+    .map((tag) => (tag.startsWith("#") ? tag : `#${tag}`));
+};
+
+// videoSchema.pre("save", async function () {
+//   this.hashtags = this.hashtags[0]
+//     .split(",")
+//     .map((tag) => (word.startsWith("#") ? word : `#${word}`));
+// });
 
 const Video = mongoose.model("Video", videoSchema);
 

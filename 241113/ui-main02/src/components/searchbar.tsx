@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 // import { useRouter } from "next/nevigation";
 import { useRouter, useSearchParams } from "next/navigation";
 import style from "./searchbar.module.css";
@@ -27,12 +27,14 @@ const Searchbar = () => {
   };
 
   return (
-    <div>
-      <form className={style.searchbar_container} onSubmit={onSubmit}>
-        <input type="text" value={search} onChange={onChangeSearch} />
-        <input type="submit" value="검색" />
-      </form>
-    </div>
+    <Suspense>
+      <div>
+        <form className={style.searchbar_container} onSubmit={onSubmit}>
+          <input type="text" value={search} onChange={onChangeSearch} />
+          <input type="submit" value="검색" />
+        </form>
+      </div>
+    </Suspense>
   );
 };
 
