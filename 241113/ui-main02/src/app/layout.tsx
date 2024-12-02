@@ -25,7 +25,13 @@ const Footer = async () => {
   );
 };
 
-const Rootlayout = ({ children }: { children: ReactNode }) => {
+const Rootlayout = ({
+  children,
+  modal,
+}: {
+  children: ReactNode;
+  modal: ReactNode;
+}) => {
   return (
     <html lang="ko">
       <body>
@@ -37,6 +43,8 @@ const Rootlayout = ({ children }: { children: ReactNode }) => {
           {/* <footer>제작 @SCY</footer> */}
           <Footer />
         </div>
+        {modal}
+        <div id="modal-root"></div>
       </body>
     </html>
   );

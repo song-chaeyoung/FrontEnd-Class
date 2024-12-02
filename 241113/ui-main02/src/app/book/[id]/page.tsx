@@ -1,7 +1,9 @@
 import React from "react";
 import style from "./page.module.css";
-import { BookData } from "@/types";
+import { BookData, ReviewData } from "@/types";
 import { notFound } from "next/navigation";
+import ReviewItem from "@/components/review-item";
+import ReviewEditor from "@/components/review-editor";
 
 const Booktail = async ({ bookId }: { bookId: string }) => {
   const response = await fetch(
@@ -43,23 +45,27 @@ const Booktail = async ({ bookId }: { bookId: string }) => {
   );
 };
 
-const ReviewEditor = () => {
-  const createReviewAction = async (formData: FormData) => {
-    "use server";
+const ReviewList = async ({ bookId }: { bookId: string }) => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/review/book/${bookId}`,
+    {
+      next: {
+        tags: [`review-${bookId}`],
+      },
+    }
+  );
 
-    const content = formData.get("content");
-    const author = formData.get("author");
-    console.log("server action");
-    console.log(content, author);
-  };
+  if (!response.ok) {
+    throw new Error(`Review fetch failed : ${response.statusText}`);
+  }
+
+  const reviews: ReviewData[] = await response.json();
 
   return (
     <section>
-      <form action={createReviewAction}>
-        <input type="text" name="content" placeholder="Review 내용" />
-        <input type="text" name="author" placeholder="작성자" />
-        <input type="submit" value="작성하기" />
-      </form>
+      {reviews.map((review) => (
+        <ReviewItem key={`review-item-${review.id}`} {...review} />
+      ))}
     </section>
   );
 };
@@ -71,15 +77,43 @@ export const generateStaticParams = () => {
   return [{ id: "1" }, { id: "2" }, { id: "3" }];
 };
 
-const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book/${id}`
+  );
+
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+
+  const book: BookData = await response.json();
+
+  return {
+    title: `${book.title} - 한입북스`,
+    description: `${book.description}`,
+    openGraph: {
+      title: `${book.title} - 한입북스`,
+      description: `${book.description}`,
+      images: [`${book.coverImgUrl}`],
+    },
+  };
+};
+
+const BookPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
 
   return (
     <div className={style.container}>
       <Booktail bookId={id} />
-      <ReviewEditor />
+      <ReviewEditor bookId={id} />
+      <ReviewList bookId={id} />
     </div>
   );
 };
 
-export default Page;
+export default BookPage;
