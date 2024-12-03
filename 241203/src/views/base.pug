@@ -1,0 +1,40 @@
+doctype html
+html(lang="ko")
+  head
+    title #{docTitle} | #{siteName}
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css"> 
+    style. 
+      nav ul {
+          display : flex;
+          gap : 4px;
+        }
+      a {
+        color : inherit;
+        text-decoration : none;
+        cursor : pointer;
+      }
+  body
+    header 
+      h1 I Love #{siteName}
+      nav 
+        ul 
+          li 
+            a(href="/") Home
+          if loggedIn 
+            li 
+              a(href="/logout") Log Out 
+            li 
+              a(href="/my-profile") #{loggedInUser.name}의 Profile
+          else    
+            li 
+              a(href="/login") Login
+            li 
+              a(href="/join") Join
+          li
+            a(href="/videos/upload") UploadVideo
+          li
+            a(href="/search") Search
+      h1=docTitle
+    main
+      block content
+    include partials/footer.pug
